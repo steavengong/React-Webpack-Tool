@@ -9,11 +9,20 @@ const Util = require('../common/util/index');
 const Request = require('../common/request/index');
 const Config = require('../common/config/index');
 const WXHead = require('./head/wx/index');
+const SwipeHead = require('./head/swipe/index');
 const WXFoot = require('./foot/wx/index');
 const ServePage = React.createClass({
   getInitialState:function(){
     return {
       topImages:[],
+      statusTime:{
+        currentSystemDate:'',
+        discountEndTime:''
+      },
+      discount:{
+        discountType:0,
+        discountTypeText:''
+      }
     }
   },
   initServeData:function(){
@@ -30,11 +39,24 @@ const ServePage = React.createClass({
         if(response){
           const data = response.data.objectData;
           const topImages = data.topImages&&data.topImages.length>0?data.topImages:[];
+          const currentSystemDate = data.currentSystemDate;
+          const discountEndTime = data.discountEndTime;
+          const discountType = data.discountType;
+          const discountTypeText = data.discountTypeText;
           console.log(data);
 
           const state = {
-            topImages:topImages
+            topImages:topImages,
+            statusTime:{
+              currentSystemDate:currentSystemDate,
+              discountEndTime:discountEndTime
+            },
+            discount:{
+              discountType:discountType,
+              discountTypeText:discountTypeText
+            }
           }
+          console.log(state);
           this.setState(state);
         }
       }.bind(this)
@@ -48,6 +70,10 @@ const ServePage = React.createClass({
     return (
       <div className="serve_page">
         <WXHead/>
+        <SwipeHead topImages={this.state.topImages}
+                   discount={this.state.discount}
+                   statusTime={this.state.statusTime}
+                   swipeName={'serve_swipe bg_box_4_3'}/>
         <WXFoot/>
       </div>
     )
