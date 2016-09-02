@@ -3,9 +3,20 @@
  */
 const React = require('react');
 const ReactDom = require('react-dom');
-const App = require('./router/index');
+const Router = require('react-router').Router;
+const Route = require('react-router').Route;
+const hashHistory = require('react-router').hashHistory;
+const ServePage = require('./app/pages/index');
+
+const router = (
+  <Route path="/" >
+    <Route path=":id" component={ServePage}></Route>
+  </Route>
+)
 
 ReactDom.render(
-  <App></App>,
+  <Router history={hashHistory}>
+    {router}
+  </Router>,
   document.getElementById('app')
 )
