@@ -175,7 +175,7 @@ const IndexPage = React.createClass({
     //判断提交后结果 提交成功或者已经参加过了
     this.setState({
       hasJoin:true,
-      fileResult:obj.photoPath+'@414w',
+      fileResult:obj.photoPath,
       isSelf:true,
       needJoin:false,
     });
@@ -237,7 +237,7 @@ const IndexPage = React.createClass({
                   needJoin:false,
                   showHome:false,
                   showPhoto:true,
-                  fileResult:obj.photoPath+'@414w',
+                  fileResult:obj.photoPath
                 }
                 this.setState(state);
                 shareObject = {
@@ -268,7 +268,7 @@ const IndexPage = React.createClass({
                   needJoin : false,
                   showHome:false,
                   showPhoto:true,
-                  fileResult:obj.photoPath+'@414w',
+                  fileResult:obj.photoPath,
                 }
                 this.setState(state);
               }
@@ -300,7 +300,7 @@ const IndexPage = React.createClass({
                 needJoin : false,
                 showHome:false,
                 showPhoto:true,
-                fileResult:obj.photoPath+'@414w',
+                fileResult:obj.photoPath,
               }
               this.setState(state);
               shareObject = {
@@ -343,7 +343,7 @@ const IndexPage = React.createClass({
                 needJoin:false,
                 showHome:false,
                 showPhoto:true,
-                fileResult:obj.photoPath+'@414w',
+                fileResult:obj.photoPath,
               }
               this.setState(state);
             }

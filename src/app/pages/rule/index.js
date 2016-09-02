@@ -8,6 +8,7 @@ let pillow = require('../../assets/rule_pillow.png');
 let bag = require('../../assets/rule_bag.png');
 let barrier = require('../../assets/barrier.png');
 let sawasdee = require('../../assets/sawasdee.png');
+let fisher = require('../../assets/fisher.png');
 let down = require('../../assets/down.png');
 let start = require('../../assets/start.png');
 const RulePart = React.createClass({
@@ -70,6 +71,9 @@ const RulePart = React.createClass({
             <br/>
             <img src={sawasdee} className="img_auto_height"/>
             <div className="text-gift">价值1980元，泰国原装进口，萨瓦斯蒂 Sawasdee 泰国婴幼儿天然乳胶床上5件套（床单、床套、枕头套*2、床罩）</div>
+            <br/>
+            <img src={fisher} className="img_auto_height img_gift"/>
+            <div className="text-gift">费雪最新款玩具 毛毛</div>
             <br/>
           </div>
         </div>
