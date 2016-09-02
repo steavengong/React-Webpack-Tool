@@ -10,7 +10,7 @@ entry.setEntryFile = function(){
 entry.setPublicPath = function(validEnv){
   switch (validEnv){
     case 'dist':
-      defaultSettings.publicPath = "http://www.mengbp.com/web/App/share/MBPV4/Server/assets/";
+      defaultSettings.publicPath = "http://www.mengbp.com/web/App/share/MBPV4/ServerPage/assets/";
       break;
     default:
       defaultSettings.publicPath = "/assets/";

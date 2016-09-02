@@ -4,15 +4,15 @@
 const React = require('react');
 const Router = require('react-router').Router;
 const Route = require('react-router').Route;
-const browserHistory = require('react-router').browserHistory;
+const hashHistory = require('react-router').hashHistory;
 const ServePage = require('../app/pages/index');
 
 const IndexRouter = React.createClass({
   render:function(){
     return (
-      <Router history={browserHistory}>
+      <Router history={hashHistory}>
         <Route path="/"></Route>
-        <Route path="/mbpServer/:id" component={ServePage}></Route>
+        <Route path="/:id" component={ServePage}></Route>
       </Router>
     )
   }
