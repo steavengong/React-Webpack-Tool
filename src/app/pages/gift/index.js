@@ -11,9 +11,9 @@ const GiftLayer = React.createClass({
     },
     render:function(){
         return (
-            <div className={this.props.isShow?"layer_part gift_layer":"layer_part gift_layer hidden"}>
-                <img src={close} className='img_auto_height img_close'onClick={this.closeLayer}/>
-                <img src={giftBg} className="img_auto_height img_gift_bg"/>
+            <div className={this.props.isShow?"layer_part gift_layer animated fadeIn":"layer_part gift_layer hidden"}>
+                <img src={close} className='img_auto_height img_close animated bounceInDown'onClick={this.closeLayer}/>
+                <img src={giftBg} className="img_auto_height img_gift_bg animated bounceIn"/>
             </div>
         )
     }

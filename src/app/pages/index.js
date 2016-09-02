@@ -3,6 +3,7 @@
  */
 const React = require('react');
 require('normalize.css');
+require('animate.css');
 require('../styles/base.css');
 require('./index.css');
 let mainBg = require('../assets/main_bg.png');
@@ -368,8 +369,8 @@ const IndexPage = React.createClass({
         <div className="background_box">
           <img src={this.state.bgImageFlag?mainBg:ruleBg} className="img_auto_height"/>
           <img src={lantern} className="img_auto_height img_lantern"/>
-          <img src={lighter} className="img_auto_height img_lantern"/>
-          <img src={stars} className="img_auto_height img_stars"/>
+          <img src={lighter} className="img_auto_height img_lantern animated infinite flash flash_lighter"/>
+          <img src={stars} className="img_auto_height img_stars animated infinite flash flash_star"/>
           <HomePart isShow={this.state.showHome}
                     changeLayer={this.changeLayer}/>
           <RulePart isShow={this.state.showRule}

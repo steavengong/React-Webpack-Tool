@@ -19,7 +19,7 @@
 .info_title{
     position: absolute;
     z-index: 11;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 30px;
     left: calc( (100% - 96px) / 2);
     left: -webkit-calc( (100% - 96px) / 2);

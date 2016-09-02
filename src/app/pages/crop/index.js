@@ -28,7 +28,7 @@ const CropLayer = React.createClass({
     },
     render:function(){
         return (
-            <div className={this.props.isShow?"layer_part crop_layer":"layer_part crop_layer hidden"}>
+            <div className={this.props.isShow?"layer_part crop_layer animated fadeIn":"layer_part crop_layer hidden"}>
                 <img src={cancel} className="img_auto_height img_cancel" onClick={this.closeLayer}/>
                 <img src={complete} className="img_auto_height img_complete" onClick={this.crop}/>
                 <Cropper

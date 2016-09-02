@@ -60,7 +60,7 @@ const PhotoPart = React.createClass({
     },
     render:function(){
         return (
-            <div className={this.props.isShow?'page_part photo_part':'page_part photo_part hidden'}>
+            <div className={this.props.isShow?'page_part photo_part animated fadeIn':'page_part photo_part hidden'}>
                 <div className="photo_group">
                     <img src={this.props.fileResult?((typeof (this.props.fileResult) === 'object')? this.props.fileResult.toDataURL():this.props.fileResult):''} className="img_auto_height img_photo_result"/>
                     <img src={photoBorder} className="img_auto_height img_photo_border"/>

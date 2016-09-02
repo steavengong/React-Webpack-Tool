@@ -40,3 +40,91 @@ body{
 .color_red{
     color: #F85C9B;
 }
+
+.flash_star{
+  -webkit-animation-duration: 4s;
+  animation-duration: 4s;
+}
+
+.flash_lighter{
+  -webkit-animation-duration: 6s;
+  animation-duration: 6s;
+}
+
+@-webkit-keyframes pulse_finger {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.2, 1.2, 1.2);
+    transform: scale3d(1.2, 1.2, 1.2);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes pulse_finger {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.2, 1.2, 1.2);
+    transform: scale3d(1.2, 1.2, 1.2);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.pulse_finger {
+  -webkit-animation-name: pulse_finger;
+  animation-name: pulse_finger;
+}
+
+.slideOutDown_flash{
+  -webkit-animation-name: slideOutDown_flash;
+  animation-name: slideOutDown_flash;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+}
+
+@keyframes slideOutDown_flash {
+  from, 50%, to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  25%, 75% {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+
+@-webkit-keyframes slideOutDown_flash {
+  from, 50%, to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  25%, 75% {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+

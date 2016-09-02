@@ -21,11 +21,11 @@ const CardLayer = React.createClass({
     },
     render:function(){
         return (
-            <div className={this.props.isShow?"layer_part card_layer":"layer_part card_layer hidden"}>
-                <img src={close} className="img_auto_height img_close" onClick={this.closeLayer}/>
-                <img src={cardBg} className="img_auto_height img_card_bg"/>
-                <img src={start} className="img_auto_height img_card_start" onClick={this.showPhotoPart}/>
-                <img src={rule} className="img_auto_height img_card_rule" onClick={this.showRulePart}/>
+            <div className={this.props.isShow?"layer_part card_layer animated fadeIn":"layer_part card_layer hidden"}>
+                <img src={close} className="img_auto_height img_close animated bounceInDown" onClick={this.closeLayer}/>
+                <img src={cardBg} className="img_auto_height img_card_bg animated bounceIn"/>
+                <img src={start} className="img_auto_height img_card_start animated flipInY" onClick={this.showPhotoPart}/>
+                <img src={rule} className="img_auto_height img_card_rule animated flipInY" onClick={this.showRulePart}/>
             </div>
         )
     }

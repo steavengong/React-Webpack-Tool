@@ -16,13 +16,13 @@ const RulePart = React.createClass({
   },
   render:function(){
     return (
-      <div className={this.props.isShow?'page_part rule_part':'page_part rule_part hidden'}>
-        <div className="rule_title color_blue">活动详情</div>
-        <div className="rule_content color_blue">
+      <div className={this.props.isShow?'page_part rule_part animated fadeIn':'page_part rule_part hidden'}>
+        <div className="rule_title color_blue animated rubberBand">活动详情</div>
+        <div className="rule_content color_blue animated bounceInUp">
           中秋星宝贝，全家总动员<br/>
           萌宝派小模特线下狂欢<br/>
         </div>
-        <div className="rule_body">
+        <div className="rule_body animated zoomInDown">
           <div className="rule_body_part color_blue">
             中秋追月节，全家总动员，今年的中秋佳节你准备带着宝宝上哪玩呢？<br/>
             9月15、16日，萌宝派与优衣库邀你线上线下狂欢一起嗨！<br/>
@@ -73,8 +73,8 @@ const RulePart = React.createClass({
             <br/>
           </div>
         </div>
-        <img src={down} className="img_auto_height img_down"/>
-        <img src={start} className="img_auto_height img_start" onClick={this.changePart}/>
+        <img src={down} className="img_auto_height img_down animated infinite slideOutDown_flash"/>
+        <img src={start} className="img_auto_height img_start animated flipInY" onClick={this.changePart}/>
       </div>
     )
   }

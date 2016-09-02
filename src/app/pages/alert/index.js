@@ -19,7 +19,7 @@ const AlertBox = React.createClass({
     },
     render:function(){
         return (
-            <div className={this.props.alertOptions.showAlert?'alert_box':'alert_box hidden'}>
+            <div className={this.props.alertOptions.showAlert?'alert_box animated fadeIn':'alert_box hidden'}>
                 <div className={this.props.alertOptions.type==1?"alert_body alert_body_info":"alert_body"}>
                     <div className="alert_content" dangerouslySetInnerHTML = {{__html:this.props.alertOptions.content}}>
                     </div>

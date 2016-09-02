@@ -12,7 +12,7 @@ const ShareLayer = React.createClass({
     },
     render:function(){
         return (
-            <div className={this.props.isShow?"layer_part share_part":"layer_part share_part hidden"}
+            <div className={this.props.isShow?"layer_part share_part animated fadeIn":"layer_part share_part hidden"}
                  onClick={this.closeLayer}>
                 <img src={lantern} className="img_auto_height img_share_lantern"/>
                 <img src={moon} className="img_auto_height img_share_moon"/>

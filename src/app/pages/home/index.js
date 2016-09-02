@@ -15,13 +15,13 @@ const HomePart = React.createClass({
     },
     render:function(){
         return (
-            <div className={this.props.isShow?'page_part home_part':'page_part home_part hidden'}>
-                <img src={title} className="img_auto_height img_title"/>
-                <img src={content} className="img_auto_height img_content"/>
-                <img src={magazine} className="img_auto_height img_magazine" onClick={this.changeLayer}/>
+            <div className={this.props.isShow?'page_part home_part animated fadeIn':'page_part home_part hidden'}>
+                <img src={title} className="img_auto_height img_title animated rubberBand"/>
+                <img src={content} className="img_auto_height img_content animated bounceInUp"/>
+                <img src={magazine} className="img_auto_height img_magazine animated rubberBand" onClick={this.changeLayer}/>
                 <div className="click_group">
-                    <img src={clickText} className="img_auto_height"/>
-                    <img src={clickFinger} className="img_auto_height img_click_finger"/>
+                    <img src={clickText} className="img_auto_height animated tada"/>
+                    <img src={clickFinger} className="img_auto_height img_click_finger animated infinite pulse_finger"/>
                 </div>
                 <img src={rabbit} className="img_auto_height img_rabbit"/>
             </div>

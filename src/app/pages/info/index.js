@@ -236,7 +236,7 @@ const InfoLayer = React.createClass({
     },
     render:function(){
         return (
-            <div className={this.props.isShow?"layer_part info_layer":"layer_part info_layer hidden"}>
+            <div className={this.props.isShow?"layer_part info_layer animated fadeIn":"layer_part info_layer hidden"}>
                 <img src={close} className="img_auto_height img_close" onClick={this.closeLayer}/>
                 <div className="info_body color_blue">
                     <img src={infoBg} className="img_auto_height img_info_bg"/>
