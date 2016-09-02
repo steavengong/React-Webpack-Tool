@@ -1,0 +1,37 @@
+/*wx_head*/
+.wx_head{
+  width: inherit;
+  height: 50px;
+  padding: 10px;
+  line-height: 20px;
+  -webkit-box-shadow: 0px 0px 4px rgba(3, 3, 3, 0.3);
+  box-shadow: 0px 0px 4px rgba(3, 3, 3, 0.3);
+}
+
+.wx_logo{
+  float: left;
+  width: 50px;
+  margin-right: 10px;
+}
+
+.wx_head_body{
+  padding-top: 5px;
+}
+
+.wx_head_body>.wx_title{
+  font-size: 14px;
+  color: #FF4E72;
+}
+
+.wx_download{
+  float: right;
+  position: relative;
+  top: -30px;
+}
+
+.wx_download>a{
+  color: #fd83af;
+  border:1px solid #fd83af;
+  border-radius: 4px;
+  padding: 4px 5px;
+}

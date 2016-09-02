@@ -3,7 +3,7 @@
  */
 const React = require('react');
 const ReactDom = require('react-dom');
-const App = require('./app/pages/index');
+const App = require('./router/index');
 
 ReactDom.render(
   <App></App>,
