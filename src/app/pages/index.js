@@ -8,6 +8,7 @@ require('./index.css');
 let mainBg = require('../assets/main_bg.png');
 let ruleBg = require('../assets/rule_bg.png');
 let lantern = require('../assets/lantern.png');
+let lighter = require('../assets/lighter.png');
 let stars = require('../assets/stars.png');
 const Util = require('../common/util/index');
 const Config = require('../common/config/index');
@@ -367,6 +368,7 @@ const IndexPage = React.createClass({
         <div className="background_box">
           <img src={this.state.bgImageFlag?mainBg:ruleBg} className="img_auto_height"/>
           <img src={lantern} className="img_auto_height img_lantern"/>
+          <img src={lighter} className="img_auto_height img_lantern"/>
           <img src={stars} className="img_auto_height img_stars"/>
           <HomePart isShow={this.state.showHome}
                     changeLayer={this.changeLayer}/>
