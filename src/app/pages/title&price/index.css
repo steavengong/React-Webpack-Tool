@@ -1,0 +1,56 @@
+/*title_price_box*/
+.title_price_box{
+  padding: 0px 10px;
+  color: #666666;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.title_price_box>div{
+  padding: 7px 0px;
+}
+
+.price_box{
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.price_box>span+span{
+  margin-left: 10px;
+}
+
+.price_type{
+  background-color: #FF4E72;
+  color: #FFFFFF;
+  padding: 0px 4px;
+  border-radius: 4px;
+  float: left;
+}
+
+.current_price{
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.peoples_buy_number{
+  float: right;
+  color: #999999;
+}
+
+.original_price{
+  color: #999999;
+  padding: 0px 5px;
+  position: relative;
+}
+
+.original_price:after{
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  content: ' ';
+  background-color: #999999;
+  top: 6px;
+  left: 0px;
+}

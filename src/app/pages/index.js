@@ -11,9 +11,15 @@ const Config = require('../common/config/index');
 const WXHead = require('./head/wx/index');
 const SwipeHead = require('./head/swipe/index');
 const WXFoot = require('./foot/wx/index');
+const Divide = require('./divide/index');
+const TitlePriceBox = require('./title&price/index');
 const ServePage = React.createClass({
   getInitialState:function(){
     return {
+      styleJSON:{
+        height:'10px',
+        backgroundColor:'#C8C8C8'
+      },
       topImages:[],
       statusTime:{
         currentSystemDate:'',
@@ -22,6 +28,12 @@ const ServePage = React.createClass({
       discount:{
         discountType:0,
         discountTypeText:''
+      },
+      title:'',
+      price:{
+        currentPrice:0,
+        originalPrice:0,
+        priceDesc:'',
       }
     }
   },
@@ -74,6 +86,8 @@ const ServePage = React.createClass({
                    discount={this.state.discount}
                    statusTime={this.state.statusTime}
                    swipeName={'serve_swipe bg_box_4_3'}/>
+        <TitlePriceBox />
+        <Divide styleJSON={this.state.styleJSON}/>
         <WXFoot/>
       </div>
     )
