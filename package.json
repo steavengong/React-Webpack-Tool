@@ -67,6 +67,7 @@
     "postcss-loader": "^0.8.0"
   },
   "dependencies": {
+    "animate.css": "^3.5.1",
     "cropperjs": "^0.8.0",
     "dateformat": "^1.0.12",
     "jquery": "^2.2.4",
