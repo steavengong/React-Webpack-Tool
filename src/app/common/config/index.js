@@ -6,8 +6,8 @@ const Config = require('../../../common/config/index');
 Config.debug = true;
 let shareImage = require('../../assets/logo.png');
 
-config.requestAction = 'http://erpuat.mengbp.com:8090/wine-rest/cgi';
-config.requestActionDebug = 'http://erpuat.mengbp.com:8090/wine-rest/cgi';
+Config.requestAction = 'http://erpuat.mengbp.com:8090/wine-rest/cgi';
+Config.requestActionDebug = 'http://erpuat.mengbp.com:8090/wine-rest/cgi';
 //Config.requestLocalAction = 'http://192.168.100.164:8081/wine-weixin-rest/cgi';
 
 Config.requestWXAction = 'http://erpuat.mengbp.com:8090/wine-weixin-rest/cgi';
