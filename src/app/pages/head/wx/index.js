@@ -4,7 +4,7 @@
 const React = require('react');
 let logo = require('../../../assets/logo.png');
 const Util = require('../../../common/util/index');
-
+require('./index.css');
 const WXHead = React.createClass({
   downloadApp : function(){
     window.location.href = 'http://www.baidu.com';
