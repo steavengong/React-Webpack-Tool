@@ -21,6 +21,10 @@
   margin-left: 10px;
 }
 
+.price_box>.price_type.hidden+span{
+  margin-left: 0px;
+}
+
 .price_type{
   background-color: #FF4E72;
   color: #FFFFFF;

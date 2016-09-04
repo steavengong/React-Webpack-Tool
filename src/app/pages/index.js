@@ -34,6 +34,7 @@ const ServePage = React.createClass({
         currentPrice:0,
         originalPrice:0,
         priceDesc:'',
+        buyPeoplesNumber:0
       }
     }
   },
@@ -55,6 +56,11 @@ const ServePage = React.createClass({
           const discountEndTime = data.discountEndTime;
           const discountType = data.discountType;
           const discountTypeText = data.discountTypeText;
+          const currentPrice = data.currentPrice;
+          const originalPrice = data.originalPrice;
+          const priceDesc = data.priceDesc;
+          const buyPeoplesNumber = data.realityPeoples;
+          const title = data.title;
           console.log(data);
 
           const state = {
@@ -66,6 +72,13 @@ const ServePage = React.createClass({
             discount:{
               discountType:discountType,
               discountTypeText:discountTypeText
+            },
+            title:title,
+            price:{
+              currentPrice:currentPrice,
+              originalPrice:originalPrice,
+              priceDesc:priceDesc,
+              buyPeoplesNumber:buyPeoplesNumber
             }
           }
           console.log(state);
@@ -86,7 +99,9 @@ const ServePage = React.createClass({
                    discount={this.state.discount}
                    statusTime={this.state.statusTime}
                    swipeName={'serve_swipe bg_box_4_3'}/>
-        <TitlePriceBox />
+        <TitlePriceBox discount={this.state.discount}
+                       title={this.state.title}
+                       price={this.state.price}/>
         <Divide styleJSON={this.state.styleJSON}/>
         <WXFoot/>
       </div>
