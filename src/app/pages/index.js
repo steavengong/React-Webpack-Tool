@@ -11,6 +11,7 @@ let ruleBg = require('../assets/rule_bg.png');
 let lantern = require('../assets/lantern.png');
 let lighter = require('../assets/lighter.png');
 let stars = require('../assets/stars.png');
+let bgm = require('../assets/bgm.mp3');
 const Util = require('../common/util/index');
 const Config = require('../common/config/index');
 const Request =require('../common/request/index');
@@ -41,7 +42,8 @@ const IndexPage = React.createClass({
       fileResult:'',
       isSelf:false,
       hasJoin:false,
-      needJoin:true
+      needJoin:true,
+      jsBridge:null
     }
   },
   changePart:function(type){
@@ -362,10 +364,30 @@ const IndexPage = React.createClass({
   },
   componentDidMount:function(){
     this.getUserInfo();
+    var self = this;
+    Util.initJSBridge().then(function(bridge){
+      self.setState({jsBridge:bridge});
+    })
+  },
+  registerHandler:function(){
+    Util.registerHandler(this.state.jsBridge,"functionInJs",function(data,callBack){
+    })
+  },
+  callHandler:function(){
+    Util.callHandler(this.state.jsBridge,"setTitle",{title:'萌宝派中秋星宝贝'},function(data){
+    })
+  },
+  showAppPhotoCropLayer:function(){
+    var self = this;
+    Util.callHandler(this.state.jsBridge,"photoGallery",{imageCount:1},function(data){
+      self.getFileOrigin(data.urlLocations[0])
+    })
   },
   render:function(){
     return (
       <div className="main_box" style={this.state.bgImageFlag?{backgroundColor:'#FCF59B'}:{backgroundColor:'#FFFFFF'}}>
+        {this.registerHandler()}
+        {this.callHandler()}
         <div className="background_box">
           <img src={this.state.bgImageFlag?mainBg:ruleBg} className="img_auto_height"/>
           <img src={lantern} className="img_auto_height img_lantern"/>
@@ -380,6 +402,8 @@ const IndexPage = React.createClass({
                      needJoin = {this.state.needJoin}
                      isSelf = {this.state.isSelf}
                      fileResult={this.state.fileResult}
+                     jsBridge = {this.state.jsBridge}
+                     showAppPhotoCropLayer = {this.showAppPhotoCropLayer}
                      changePart={this.changePart}
                      changeLayer={this.changeLayer}
                      getFileOrigin={this.getFileOrigin}
