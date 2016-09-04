@@ -402,7 +402,7 @@ const IndexPage = React.createClass({
       <div className="main_box" style={this.state.bgImageFlag?{backgroundColor:'#FCF59B'}:{backgroundColor:'#FFFFFF'}}>
         {this.registerHandler()}
         {this.callHandler()}
-        <img className="img_auto_height img_audio" src={this.state.audioFlag?audioStop:audioPlay} onClick={this.changeAudio}/>
+        <img className={this.state.audioFlag?"img_auto_height img_audio animated infinite audio_rotateIn animate_pause":"img_auto_height img_audio animated infinite audio_rotateIn"} src={this.state.audioFlag?audioStop:audioPlay} onClick={this.changeAudio}/>
         <audio className="audio_box hidden"
                loop
                src={bgm}

@@ -63,3 +63,51 @@
 audio{
   display: none;
 }
+
+@-webkit-keyframes audio_rotateIn {
+  from {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes audio_rotateIn {
+  from {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.audio_rotateIn{
+  -webkit-animation-name: audio_rotateIn;
+  animation-name: audio_rotateIn;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-timing-function:linear;
+  animation-timing-function:linear;
+}
+
+.animate_pause{
+  animation-play-state:paused;
+  -webkit-animation-play-state:paused;
+}
+
+
