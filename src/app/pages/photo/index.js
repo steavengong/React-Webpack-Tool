@@ -27,9 +27,6 @@ const PhotoPart = React.createClass({
     }
     event.target.value = '';
   },
-  showAppPhotoCropLayer:function(){
-    this.props.showAppPhotoCropLayer();
-  },
   showUserInfoJoinLayer:function(){
     if(this.props.fileResult){
       this.props.changeLayer(2);
@@ -75,10 +72,8 @@ const PhotoPart = React.createClass({
                ((typeof (this.props.fileResult) === 'object')?"img_auto_height img_photo_border":"img_auto_height img_photo_border hidden"):"img_auto_height img_photo_border"}/>
         </div>
         <div className={this.props.needJoin?"choose_photo":"choose_photo hidden"}>
-          <img src={choosePhoto} className="img_auto_height" onClick={this.showAppPhotoCropLayer}/>
-          {/*input type="file" className需要根据JSBridge 回传的值做判断*/}
-          {/* */}
-          <input type="file" className={this.props.jsBridge?"input_photo_file hidden":"input_photo_file"} accept="image/*" onChange={this.showLocalPhotoCropLayer}/>
+          <img src={choosePhoto} className="img_auto_height"/>
+          <input type="file" className="input_photo_file" accept="image/*" onChange={this.showLocalPhotoCropLayer}/>
         </div>
         <img src={chooseOk}
              className={this.props.needJoin?"img_auto_height img_choose_ok":"img_auto_height img_choose_ok hidden"}

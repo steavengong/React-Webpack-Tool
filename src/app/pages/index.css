@@ -51,3 +51,15 @@
     right: 5%;
     top: 5%;
 }
+
+.img_audio{
+  position: absolute;
+  z-index: 999;
+  width: 9.33%;
+  top: 1%;
+  left: 30%;
+}
+
+audio{
+  display: none;
+}

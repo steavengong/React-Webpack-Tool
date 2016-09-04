@@ -2,6 +2,7 @@
  * Created by Administrator on 2016/8/26.
  */
 const React = require('react');
+const ReactAudioPlayer = require('react-audio-player').default;
 require('normalize.css');
 require('animate.css');
 require('../styles/base.css');
@@ -12,6 +13,8 @@ let lantern = require('../assets/lantern.png');
 let lighter = require('../assets/lighter.png');
 let stars = require('../assets/stars.png');
 let bgm = require('../assets/bgm.mp3');
+let audioPlay = require('../assets/audio_play.png');
+let audioStop = require('../assets/audio_stop.png');
 const Util = require('../common/util/index');
 const Config = require('../common/config/index');
 const Request =require('../common/request/index');
@@ -43,7 +46,8 @@ const IndexPage = React.createClass({
       isSelf:false,
       hasJoin:false,
       needJoin:true,
-      jsBridge:null
+      jsBridge:null,
+      audioFlag:false,
     }
   },
   changePart:function(type){
@@ -377,17 +381,34 @@ const IndexPage = React.createClass({
     Util.callHandler(this.state.jsBridge,"setTitle",{title:'萌宝派中秋星宝贝'},function(data){
     })
   },
-  showAppPhotoCropLayer:function(){
-    var self = this;
-    Util.callHandler(this.state.jsBridge,"photoGallery",{imageCount:1},function(data){
-      self.getFileOrigin(data.urlLocations[0])
-    })
+  playAudio:function(){
+    this.refs.audio.play();
+  },
+  pauseAudio:function(){
+    this.refs.audio.pause();
+  },
+  changeAudio:function(){
+    if(this.refs.audio.paused){
+      this.setState({audioFlag:false})
+      this.playAudio();
+    }
+    else{
+      this.setState({audioFlag:true})
+      this.pauseAudio();
+    }
   },
   render:function(){
     return (
       <div className="main_box" style={this.state.bgImageFlag?{backgroundColor:'#FCF59B'}:{backgroundColor:'#FFFFFF'}}>
         {this.registerHandler()}
         {this.callHandler()}
+        <img className="img_auto_height img_audio" src={this.state.audioFlag?audioStop:audioPlay} onClick={this.changeAudio}/>
+        <audio className="audio_box hidden"
+               loop
+               src={bgm}
+               autoPlay
+               ref = 'audio'>
+        </audio>
         <div className="background_box">
           <img src={this.state.bgImageFlag?mainBg:ruleBg} className="img_auto_height"/>
           <img src={lantern} className="img_auto_height img_lantern"/>
@@ -403,7 +424,6 @@ const IndexPage = React.createClass({
                      isSelf = {this.state.isSelf}
                      fileResult={this.state.fileResult}
                      jsBridge = {this.state.jsBridge}
-                     showAppPhotoCropLayer = {this.showAppPhotoCropLayer}
                      changePart={this.changePart}
                      changeLayer={this.changeLayer}
                      getFileOrigin={this.getFileOrigin}
