@@ -64,9 +64,9 @@ const PhotoPart = React.createClass({
     return (
       <div className={this.props.isShow?'page_part photo_part animated fadeIn':'page_part photo_part hidden'}>
         <img src={this.props.jsBridge?simpleTouchText:longTouchText}
-              className={this.props.fileResult && (typeof (this.props.fileResult) === 'string')?"img_auto_height img_long_touch animated infinite flash flash_star":"img_auto_height img_long_touch hidden"}/>
+              className={this.props.fileResult && (typeof (this.props.fileResult) === 'string') && this.props.isSelf?"img_auto_height img_long_touch animated infinite flash flash_star":"img_auto_height img_long_touch hidden"}/>
         <img src={finger}
-             className={this.props.fileResult && (typeof (this.props.fileResult) === 'string')?"img_auto_height img_normal_finger animated infinite flash flash_star":"img_auto_height img_normal_finger hidden"}/>
+             className={this.props.fileResult && (typeof (this.props.fileResult) === 'string')  && this.props.isSelf?"img_auto_height img_normal_finger animated infinite flash flash_star":"img_auto_height img_normal_finger hidden"}/>
         <div className="photo_group">
           <img src={this.props.fileResult?
                     ((typeof (this.props.fileResult) === 'object')?this.props.fileResult.toDataURL():this.props.fileResult + Config.waterMark):''}
