@@ -117,6 +117,24 @@ const ServePage = React.createClass({
     }
     Util.getResponseFromJSON(options);
   },
+  setWXSign:function(shareObject){
+    if(Util.isWX()){
+      Request.cmd = Config.cmds.wxJSSign;
+      Request.parameters = {
+        'url':window.location.href.split('#')[0]
+      }
+      const wxOptions = {
+        url:Config.getRequestWXAction(),
+        data:Request,
+        appId:Config.getAppId(),
+        debug:false,
+        wxReady:function(){
+          Util.shareItems(shareObject)
+        }
+      }
+      Util.setJSSign(wxOptions);
+    }
+  },
   changeTab:function(index){
     const dataObjects = [];
     this.state.tabBarData.forEach(function(dataObject,dataIndex){
