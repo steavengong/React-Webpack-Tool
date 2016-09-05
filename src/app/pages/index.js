@@ -82,10 +82,6 @@ const ServePage = React.createClass({
             userSmallImg:data.publicUser.userSmallImg,
             userNick:data.publicUser.userNike,
           }
-
-          Config.shareObject.title = title;
-          Config.shareObject.desc = data.introduce;
-
           console.log(data);
 
           const state = {
@@ -112,6 +108,16 @@ const ServePage = React.createClass({
           }
           console.log(state);
           this.setState(state);
+
+
+          const shareObject = {
+            title:title,
+            desc:data.introduce,
+            link:Config.shareObject.link + "#/"+this.props.params.id,
+            imgUrl:topImages[0].location + "@414w"
+          }
+
+          this.setWXSign(shareObject)
         }
       }.bind(this)
     }
