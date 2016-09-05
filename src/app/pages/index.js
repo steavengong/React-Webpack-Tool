@@ -35,7 +35,8 @@ const ServePage = React.createClass({
         originalPrice:0,
         priceDesc:'',
         buyPeoplesNumber:0
-      }
+      },
+      serviceRowDescs:[]
     }
   },
   initServeData:function(){
