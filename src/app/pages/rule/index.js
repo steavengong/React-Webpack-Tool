@@ -81,7 +81,7 @@ const RulePart = React.createClass({
             <div className="text-gift">优衣库logo抱枕</div>
             <br/>
             <img src={barrier} className="img_auto_height"/>
-            <div className="text-gift">价值46元Keep Barrier贝佳舒随身空气净化卡</div>
+            <div className="text-gift">价值46元<br/>Keep Barrier贝佳舒随身空气净化卡</div>
             <br/>
             <img src={sawasdee} className="img_auto_height"/>
             <div className="text-gift">价值1980元，泰国原装进口，萨瓦斯蒂 Sawasdee 泰国婴幼儿天然乳胶床上5件套（床单、床套、枕头套*2、床罩）</div>
