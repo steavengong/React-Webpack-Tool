@@ -1,0 +1,25 @@
+/*tab_bar_box*/
+.tab_bar_box{
+    display : box;
+    display : -webkit-box;
+    background-color: #FFFFFF;
+    position: relative;
+}
+
+.tab_bar_item{
+    box-flex: 1.0;
+    -webkit-box-flex: 1.0;
+    text-align: center;
+    padding: 10px 0px;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.tab_bar_item>span{
+    padding: 10px 15px 6px;
+    border-bottom: 5px solid transparent;
+    font-size: 14px;
+}
+
+.tab_bar_item.active>span{
+    border-bottom-color: #FF4E72;
+}

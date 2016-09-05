@@ -1,0 +1,38 @@
+/*swiper-container*/
+.swiper-wrapper{
+  bottom: 0px;
+  top: 0px;
+  position: absolute;
+}
+.swiper-slide{
+  background-color: #FFFFFF;
+}
+
+.swiper-pagination-bullet{
+  width: 10px;
+  height: 10px;
+  background-color: #FF4E72;
+  opacity: .5;
+}
+
+.swiper-pagination-bullet-active{
+  opacity: 1;
+}
+
+.swipe_box{
+  position: relative;
+}
+
+.status_box{
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: #999999;
+  color: #FFFFFF;
+  z-index:999;
+  text-align: center;
+  padding: 5px;
+  font-size:  12px;
+  line-height: 20px;
+}
