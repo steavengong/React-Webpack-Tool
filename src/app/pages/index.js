@@ -411,7 +411,7 @@ const IndexPage = React.createClass({
     })
   },
   showAppOpen:function(){
-    Util.callHandler(this.state.jsBridge,"serviceRoute",{"itemRedirectField" : "3" },function(data){
+    Util.callHandler(this.state.jsBridge,"route",{"itemRedirectField" : "3" , "itemRedirectType" : "service"},function(data){
     })
   },
   savePic:function(){
