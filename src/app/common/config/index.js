@@ -51,8 +51,8 @@ Config.urlParams = {
 
 
 Config.shareObject = {
-    title:"萌宝派中秋送好礼",
-    desc:"萌宝派中秋送好礼",
+    title:"萌宝派中秋星宝贝",
+    desc:"萌宝派中秋星宝贝",
     link:window.location.href.split("#")[0].split("?")[0],
     imgUrl:shareImage,
 }

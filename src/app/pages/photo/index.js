@@ -39,8 +39,8 @@ const PhotoPart = React.createClass({
   },
   showShareLayer:function(){
     /*这里需要通过JSBridge确认是否需要调用app分享方式*/
-    if(Util.JSBridge){
-
+    if(this.props.jsBridge){
+      this.props.showAppShare();
     }
     else{
       this.props.changeLayer(3);

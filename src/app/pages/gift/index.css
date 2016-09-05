@@ -7,3 +7,17 @@
     left: -webkit-calc((100% - 86.27%) / 2);
     top: 5%;
 }
+
+.img_open_app{
+  position: absolute;
+  width: 43.6%;
+  bottom: 5%;
+  right: 6%;
+}
+
+.img_gift_invite{
+  position: absolute;
+  width: 35.6%;
+  bottom: 5%;
+  left: 6%;
+}

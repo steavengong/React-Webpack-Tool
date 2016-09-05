@@ -396,19 +396,23 @@ const IndexPage = React.createClass({
       this.pauseAudio();
     }
   },
+  showAppShare:function(){},
+  showAppOpen:function(){
+
+  },
   render:function(){
     return (
       <div className="main_box" style={this.state.bgImageFlag?{backgroundColor:'#FCF59B'}:{backgroundColor:'#FFFFFF'}}>
         {this.registerHandler()}
         {this.callHandler()}
-        <img className={this.state.audioFlag?"img_auto_height img_audio animated infinite audio_rotateIn animate_pause":"img_auto_height img_audio animated infinite audio_rotateIn"} src={this.state.audioFlag?audioStop:audioPlay} onClick={this.changeAudio}/>
-        <audio className="audio_box hidden"
-               loop
-               src={bgm}
-               autoPlay
-               ref = 'audio'>
-        </audio>
         <div className="background_box">
+          <img className={this.state.audioFlag?"img_auto_height img_audio animated infinite audio_rotateIn animate_pause":"img_auto_height img_audio animated infinite audio_rotateIn"} src={this.state.audioFlag?audioStop:audioPlay} onClick={this.changeAudio}/>
+          <audio className="audio_box hidden"
+                 loop
+                 src={bgm}
+                 autoPlay
+                 ref = 'audio'>
+          </audio>
           <img src={this.state.bgImageFlag?mainBg:ruleBg} className="img_auto_height"/>
           <img src={lantern} className="img_auto_height img_lantern"/>
           <img src={lighter} className="img_auto_height img_lantern animated infinite flash flash_lighter"/>
@@ -423,6 +427,7 @@ const IndexPage = React.createClass({
                      isSelf = {this.state.isSelf}
                      fileResult={this.state.fileResult}
                      jsBridge = {this.state.jsBridge}
+                     showAppShare={this.showAppShare}
                      changePart={this.changePart}
                      changeLayer={this.changeLayer}
                      getFileOrigin={this.getFileOrigin}
@@ -442,6 +447,9 @@ const IndexPage = React.createClass({
           <ShareLayer isShow={this.state.showShareLayer}
                       changeLayer={this.changeLayer}/>
           <GiftLayer isShow={this.state.showGiftLayer}
+                     jsBridge={this.state.jsBridge}
+                     showAppShare={this.showAppShare}
+                     showAppOpen={this.showAppOpen}
                      changeLayer={this.changeLayer}/>
           <AlertBox alertOptions={this.state.alertOptions}
                     changeAlert = {this.changeAlert}/>
