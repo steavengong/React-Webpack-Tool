@@ -58,10 +58,7 @@ const PhotoPart = React.createClass({
     this.props.changePart(1);
   },
   saveFileResultToLocal:function(){
-    if(this.props.isSelf){
-      console.log("调用原生系统保存图片");
-      this.props.savePic();
-    }
+    this.props.savePic();
   },
   render:function(){
     return (
@@ -79,8 +76,8 @@ const PhotoPart = React.createClass({
                     ((typeof (this.props.fileResult) === 'object')?this.props.fileResult.toDataURL():
                     this.props.fileResult + Config.waterMark):''}
                className="img_auto_height img_photo_result"
-               onClick={this.props.fileResult  && this.props.jsBridge?
-               ((typeof (this.props.fileResult) === 'object')?'':this.saveFileResultToLocal):''}/>
+               onClick={this.props.fileResult && this.props.isSelf && (typeof (this.props.fileResult) === 'string') && this.props.jsBridge?
+               this.saveFileResultToLocal:''}/>
           <img src={photoBorder}
                className={this.props.fileResult?
                ((typeof (this.props.fileResult) === 'object')?"img_auto_height img_photo_border":

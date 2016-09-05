@@ -400,13 +400,23 @@ const IndexPage = React.createClass({
     }
   },
   showAppShare:function(){
-
+    const shareObject = {
+      "title":Config.shareObject.title,
+      "titleSub":Config.shareObject.titleLine,
+      "content":Config.shareObject.desc,
+      "targetUrl": Config.shareObject.link+"?"+Config.urlParams.fromUserPhone+'='+Util.getLocalStorage(Config.localStorageKeys.MBP_USER_PHONE),
+      "imageUrl":this.state.fileResult+Config.waterMark
+    }
+    Util.callHandler(this.state.jsBridge,"share",shareObject,function(data){
+    })
   },
   showAppOpen:function(){
-
+    Util.callHandler(this.state.jsBridge,"serviceRoute",{"itemRedirectField" : "3" },function(data){
+    })
   },
   savePic:function(){
-
+    Util.callHandler(this.state.jsBridge,"saveImage",{url:this.state.fileResult+Config.waterMark},function(data){
+    })
   },
   render:function(){
     return (
