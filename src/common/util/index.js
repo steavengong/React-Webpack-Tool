@@ -374,7 +374,7 @@ Util.shareItems = function(shareObject){
 Util.onMenuShareTimeline = function(shareObject){//获取“分享到朋友圈”按钮点击状态及自定义分享内容接口
   if(wx){
     wx.onMenuShareTimeline({
-      title : shareObject.title, // 分享标题
+      title : shareObject.titleLine||shareObject.title, // 分享标题
       link : shareObject.link, // 分享链接
       imgUrl : shareObject.imgUrl, // 分享图标
       success: shareObject.success,

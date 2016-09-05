@@ -32,15 +32,29 @@ const RulePart = React.createClass({
             辣么赞的假日活动怎能错过？<br/>
             COME ON BABY<br/>
           </div>
-          <div className="rule_body_part color_red">
+          <div className="rule_body_part color_blue">
             <div className="color_blue">参与方式：</div>
-            时间：<br/>2016年9月15、16日  10:30~16:00<br/>
-            地点：<br/>宝乐汇生活时尚中心（上海宝山区牡丹江路1569号）<br/>
-            报名方式：<br/>
-            1.电话报名：400-820-5336<br/>
-            2.微信报名：关注萌宝派微信服务号（mengbaopai），直接留言“中秋星宝贝+姓名+联系方式+场次”<br/>
-            3.萌宝派APP：APP中搜索“中秋星宝贝”线下狂欢服务—— 直接报名，活动现场由工作人员完成验证即可获得额外礼品。
-            如有疑问可电话咨询或咨询萌宝小编：mengbao1hao
+            <div className="rule_body_part color_blue">
+              Round 1<br/>
+              即日起-9月16日<br/>
+              1.	在萌宝派APP或萌宝派微信号中找到“中秋星宝贝，全家总动员”活动帖，进入活动页面。<br/>
+              2.	上传宝宝照片，并填写参赛报名信息，即可参与线上封面宝宝评选。<br/>
+              3.	将制作完成的宝宝封面照分享给好友，增加宝宝入选机会哦！<br/>
+            </div>
+            <div className="rule_body_part color_red">
+              <div className="color_blue">Round 2</div>
+              时间：<br/>
+              2016年9月15、16日10:30~16:00<br/>
+              地点：<br/>
+              宝乐汇生活时尚中心<br/>
+              上海宝山区牡丹江路1569号<br/>
+              报名方式：<br/>
+              1.	电话报名：400-820-5336<br/>
+              2.	页面报名：制作线上封面照，填写参赛信息时勾选参与线下活动，即可报名。<br/>
+              3.	微信报名：关注萌宝派微信服务号（mengbaopai），直接留言“中秋星宝贝+姓名+联系方式+场次”<br/>
+              4.	萌宝派APP：APP中搜索“中秋星宝贝”线下狂欢服务—— 直接报名，活动现场由工作人员完成验证即可获得额外礼品。
+              如有疑问可电话咨询或咨询萌宝小编：mengbao1hao<br/>
+            </div>
           </div>
           <div className="rule_body_part color_blue">
             在现场，领取“星宝”成就卡，开启星路旅程——<br/>
@@ -49,16 +63,16 @@ const RulePart = React.createClass({
             ★益智亲子玩乐区<br/>
             缤纷益智玩具一起玩，让明星宝宝萌第一次展露社交技巧吧！分享玩具、分工合作，超腻害！<br/>
             ★绘画涂鸦创意秀<br/>
-            天马行空任发挥，用多彩的画笔放飞宝宝想象吧！为粑粑麻麻画上贴纸卡通像，秒变亲子秀最佳道具<br/>
+            天马行空任发挥，用多彩的画笔放飞宝宝想象吧！为粑粑麻麻画上贴纸卡通像，秒变亲子秀最佳道具！<br/>
             ★封面宝宝大角逐<br/>
             现场《聪明宝宝》封面墙前拍摄大片，竞选品牌明星小模特，更有机会登上《聪明宝宝》杂志封面哦！<br/>
             <img src={magazine} className="img_auto_height img_gift"/>
           </div>
           <div className="rule_body_part color_blue">
             颁奖礼<br/><br/>
-            1.穿优衣库服饰参与亲子走秀，接受现场观众投票评选，角逐各项大奖。小编提醒：记得带上庞大的亲友团，现场为宝宝加油助威拉选票啦！<br/>
-            2.	所有参与活动的小明星都将有机会获得专属于自己的定制封面杂志哟！<br/>
-            2.	现场揭晓“封面小明星”，并与《聪明宝宝》签约小模特，更有机会参与优衣库大片拍摄！<br/><br/>
+            1.	穿优衣库服饰参与亲子走秀，接受现场观众投票评选，角逐各项大奖。
+            小编提醒：记得带上庞大的亲友团，现场为宝宝加油助威拉选票啦！<br/>
+            2.	所有参与活动的小明星都将有机会获得专属于自己的定制封面杂志哟！<br/><br/>
             精彩大礼抢先看：<br/>
             <img src={bag} className="img_auto_height img_gift"/>
             <div className="text-gift">优衣库帆布购物袋</div>

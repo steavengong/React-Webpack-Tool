@@ -188,6 +188,7 @@ const IndexPage = React.createClass({
     if(Util.isWX()){
       const shareObject = {
         title:Config.shareObject.title,
+        titleLine:Config.shareObject.titleLine,
         desc:Config.shareObject.desc,
         link:Config.shareObject.link + "?" + Config.urlParams.fromUserPhone + "=" + obj.phone,
         imgUrl:obj.photoPath + Config.waterMark
@@ -247,6 +248,7 @@ const IndexPage = React.createClass({
                 this.setState(state);
                 shareObject = {
                   title:Config.shareObject.title,
+                  titleLine:Config.shareObject.titleLine,
                   desc:Config.shareObject.desc,
                   link:Config.shareObject.link + "?" + Config.urlParams.fromUserPhone + "=" + obj.phone,
                   imgUrl:obj.photoPath + Config.waterMark
@@ -310,6 +312,7 @@ const IndexPage = React.createClass({
               this.setState(state);
               shareObject = {
                 title:Config.shareObject.title,
+                titleLine:Config.shareObject.titleLine,
                 desc:Config.shareObject.desc,
                 link:Config.shareObject.link + "?" + Config.urlParams.fromUserPhone + "=" + obj.phone,
                 imgUrl:obj.photoPath + Config.waterMark

@@ -52,7 +52,8 @@ Config.urlParams = {
 
 Config.shareObject = {
     title:"萌宝派中秋星宝贝",
-    desc:"萌宝派中秋星宝贝",
+    titleLine:"萌宝派庆中秋|封面大明星，品牌小模特火热招募中",
+    desc:"封面小明星，成就大梦想！9/15-9/16宝乐汇生活时尚中心 小模特线下狂欢，一起high翻天！",
     link:window.location.href.split("#")[0].split("?")[0],
     imgUrl:shareImage,
 }
