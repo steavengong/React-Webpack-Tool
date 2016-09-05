@@ -16,6 +16,7 @@ const TitlePriceBox = require('./title&price/index');
 const TimeAddressBox = require('./time&address/index');
 const UserHeadBox = require('./head/user/index');
 const TabBarBox = require('./tabbar/index');
+const TabContentBox = require('./tabcontent/index');
 const ServePage = React.createClass({
   getInitialState:function(){
     return {
@@ -43,10 +44,12 @@ const ServePage = React.createClass({
         buyPeoplesNumber:0
       },
       serviceRowDescs:[],
+      serviceDetails:[],
       publicUser:{
         userSmallImg:'',
         userNike:''
       },
+      notice:''
     }
   },
   initServeData:function(){
@@ -73,10 +76,15 @@ const ServePage = React.createClass({
           const buyPeoplesNumber = data.realityPeoples;
           const title = data.title;
           const serviceRowDescs = data.serviceRowDescs;
+          const serviceDetails = data.serviceDetails;
+          const notice = data.notice;
           const publicUser = {
             userSmallImg:data.publicUser.userSmallImg,
             userNick:data.publicUser.userNike,
           }
+
+          Config.shareObject.title = title;
+          Config.shareObject.desc = data.introduce;
 
           console.log(data);
 
@@ -98,6 +106,8 @@ const ServePage = React.createClass({
               buyPeoplesNumber:buyPeoplesNumber
             },
             serviceRowDescs:serviceRowDescs,
+            serviceDetails:serviceDetails,
+            notice:notice,
             publicUser:publicUser
           }
           console.log(state);
@@ -138,7 +148,11 @@ const ServePage = React.createClass({
         <UserHeadBox publicUser={this.state.publicUser}/>
         <Divide styleJSON={this.state.styleJSON}/>
         <TabBarBox tabBarData={this.state.tabBarData}
-                changeTab={this.changeTab}/>
+                   changeTab={this.changeTab}/>
+        <TabContentBox tabBarData={this.state.tabBarData}
+                       serviceDetails={this.state.serviceDetails}
+                       notice={this.state.notice}
+                       serverId={this.props.params.id}/>
         <WXFoot/>
       </div>
     )
