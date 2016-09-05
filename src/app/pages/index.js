@@ -13,6 +13,8 @@ const SwipeHead = require('./head/swipe/index');
 const WXFoot = require('./foot/wx/index');
 const Divide = require('./divide/index');
 const TitlePriceBox = require('./title&price/index');
+const TimeAddressBox = require('./time&address/index');
+const UserHeadBox = require('./head/user/index');
 const ServePage = React.createClass({
   getInitialState:function(){
     return {
@@ -36,7 +38,11 @@ const ServePage = React.createClass({
         priceDesc:'',
         buyPeoplesNumber:0
       },
-      serviceRowDescs:[]
+      serviceRowDescs:[],
+      publicUser:{
+        userSmallImg:'',
+        userNike:''
+      },
     }
   },
   initServeData:function(){
@@ -62,6 +68,12 @@ const ServePage = React.createClass({
           const priceDesc = data.priceDesc;
           const buyPeoplesNumber = data.realityPeoples;
           const title = data.title;
+          const serviceRowDescs = data.serviceRowDescs;
+          const publicUser = {
+            userSmallImg:data.publicUser.userSmallImg,
+            userNick:data.publicUser.userNike,
+          }
+
           console.log(data);
 
           const state = {
@@ -80,7 +92,9 @@ const ServePage = React.createClass({
               originalPrice:originalPrice,
               priceDesc:priceDesc,
               buyPeoplesNumber:buyPeoplesNumber
-            }
+            },
+            serviceRowDescs:serviceRowDescs,
+            publicUser:publicUser
           }
           console.log(state);
           this.setState(state);
@@ -103,6 +117,10 @@ const ServePage = React.createClass({
         <TitlePriceBox discount={this.state.discount}
                        title={this.state.title}
                        price={this.state.price}/>
+        <Divide styleJSON={this.state.styleJSON}/>
+        <TimeAddressBox serviceRowDescs={this.state.serviceRowDescs}/>
+        <Divide styleJSON={this.state.styleJSON}/>
+        <UserHeadBox publicUser={this.state.publicUser}/>
         <Divide styleJSON={this.state.styleJSON}/>
         <WXFoot/>
       </div>
