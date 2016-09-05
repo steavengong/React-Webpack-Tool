@@ -9,47 +9,11 @@ const Util = require('../common/util/index');
 const Request = require('../common/request/index');
 const Config = require('../common/config/index');
 const WXHead = require('./head/wx/index');
-const SwipeHead = require('./head/swipe/index');
 const WXFoot = require('./foot/wx/index');
-const Divide = require('./divide/index');
-const TitlePriceBox = require('./title&price/index');
-const TimeAddressBox = require('./time&address/index');
-const UserHeadBox = require('./head/user/index');
-const TabBarBox = require('./tabbar/index');
-const TabContentBox = require('./tabcontent/index');
 const ServePage = React.createClass({
   getInitialState:function(){
     return {
-      styleJSON:{
-        height:'10px',
-        backgroundColor:'#C8C8C8'
-      },
-      tabBarData: [
-        {title:'服务详情',active:true},{title:'服务须知',active:false},{title:'妈妈点评',active:false}
-      ],
-      topImages:[],
-      statusTime:{
-        currentSystemDate:'',
-        discountEndTime:''
-      },
-      discount:{
-        discountType:0,
-        discountTypeText:''
-      },
-      title:'',
-      price:{
-        currentPrice:0,
-        originalPrice:0,
-        priceDesc:'',
-        buyPeoplesNumber:0
-      },
-      serviceRowDescs:[],
-      serviceDetails:[],
-      publicUser:{
-        userSmallImg:'',
-        userNike:''
-      },
-      notice:''
+      data:{}
     }
   },
   initServeData:function(){
@@ -141,17 +105,6 @@ const ServePage = React.createClass({
       Util.setJSSign(wxOptions);
     }
   },
-  changeTab:function(index){
-    const dataObjects = [];
-    this.state.tabBarData.forEach(function(dataObject,dataIndex){
-      dataObject.active = false;
-      if(dataIndex==index){
-        dataObject.active = true;
-      }
-      dataObjects.push(dataObject);
-    });
-    this.setState({tabBarData:dataObjects});
-  },
   componentDidMount:function(){
     this.initServeData();
   },
@@ -159,24 +112,6 @@ const ServePage = React.createClass({
     return (
       <div className="serve_page">
         <WXHead/>
-        <SwipeHead topImages={this.state.topImages}
-                   discount={this.state.discount}
-                   statusTime={this.state.statusTime}
-                   swipeName={'serve_swipe bg_box_4_3'}/>
-        <TitlePriceBox discount={this.state.discount}
-                       title={this.state.title}
-                       price={this.state.price}/>
-        <Divide styleJSON={this.state.styleJSON}/>
-        <TimeAddressBox serviceRowDescs={this.state.serviceRowDescs}/>
-        <Divide styleJSON={this.state.styleJSON}/>
-        <UserHeadBox publicUser={this.state.publicUser}/>
-        <Divide styleJSON={this.state.styleJSON}/>
-        <TabBarBox tabBarData={this.state.tabBarData}
-                   changeTab={this.changeTab}/>
-        <TabContentBox tabBarData={this.state.tabBarData}
-                       serviceDetails={this.state.serviceDetails}
-                       notice={this.state.notice}
-                       serverId={this.props.params.id}/>
         <WXFoot/>
       </div>
     )
