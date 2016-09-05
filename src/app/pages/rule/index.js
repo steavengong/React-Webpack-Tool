@@ -57,7 +57,7 @@ const RulePart = React.createClass({
             </div>
           </div>
           <div className="rule_body_part color_blue">
-            在现场，领取“星宝”成就卡，开启星路旅程——<br/>
+            在现场，领取“星宝”成就卡，开启星路旅程<br/>
             ★舞台亲子律动操<br/>
             早教老师带领家长与宝宝一起参与韵律游戏、健康体操，为接下来的“星路之旅”做好热身操！<br/>
             ★益智亲子玩乐区<br/>
@@ -75,7 +75,7 @@ const RulePart = React.createClass({
             2.	所有参与活动的小明星都将有机会获得专属于自己的定制封面杂志哟！<br/><br/>
             精彩大礼抢先看：<br/>
             <img src={bag} className="img_auto_height img_gift"/>
-            <div className="text-gift">优衣库帆布购物袋</div>
+            <div className="text-gift">优衣库特别定制童趣帆布包</div>
             <br/>
             <img src={pillow} className="img_auto_height img_gift"/>
             <div className="text-gift">优衣库logo抱枕</div>
