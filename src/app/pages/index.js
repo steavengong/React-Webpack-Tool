@@ -2,7 +2,6 @@
  * Created by Administrator on 2016/8/26.
  */
 const React = require('react');
-const ReactAudioPlayer = require('react-audio-player').default;
 require('normalize.css');
 require('animate.css');
 require('../styles/base.css');

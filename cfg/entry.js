@@ -13,7 +13,7 @@ entry.setPublicPath = function(validEnv){
       defaultSettings.publicPath = "http://www.mengbp.com/web/WXH5/MBP/MBPZQ/assets/";
       break;
     default:
-      defaultSettings.publicPath = "/assets/";
+      defaultSettings.publicPath = "http://192.168.100.67:3000/assets/";
       break;
   }
 }
