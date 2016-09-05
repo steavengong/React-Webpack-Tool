@@ -78,3 +78,21 @@
     right: 5%;
     bottom: 5%;
 }
+
+.img_long_touch{
+  position: absolute;
+  z-index: 11;
+  width: 62.67%;
+  left: calc((100% - 62.67% )/2 );
+  left: -webkit-calc((100% - 62.67% )/2 );
+  top: 20%;
+}
+
+.img_normal_finger{
+  position: absolute;
+  z-index: 11;
+  width: 13.07%;
+  left: calc((100% - 13.07% )/2 );
+  left: -webkit-calc((100% - 13.07% )/2 );
+  top: 25%;
+}

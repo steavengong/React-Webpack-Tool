@@ -4,7 +4,6 @@
 const React = require('react');
 require('./index.css');
 const Config = require('../../common/config/index');
-const Util = require('../../common/util/index');
 let photoBorder = require('../../assets/photo_border.png');
 let choosePhoto = require('../../assets/choose_photo.png')
 let chooseOk = require('../../assets/choose_ok.png');
@@ -12,6 +11,8 @@ let enjoy = require('../../assets/enjoy.png');
 let enjoyGift = require('../../assets/enjoy_gift.png');
 let invite = require('../../assets/invite_friend.png');
 let rule = require('../../assets/rule.png');
+let longTouchText = require('../../assets/long_touch.png');
+let finger = require('../../assets/finger_normal.png');
 const PhotoPart = React.createClass({
   showLocalPhotoCropLayer:function(event){
     const files = event.target.files;
@@ -61,6 +62,10 @@ const PhotoPart = React.createClass({
   render:function(){
     return (
       <div className={this.props.isShow?'page_part photo_part animated fadeIn':'page_part photo_part hidden'}>
+        <img src={this.props.jsBridge?longTouchText:longTouchText}
+              className={this.props.fileResult && (typeof (this.props.fileResult) === 'string')?"img_auto_height img_long_touch animated infinite flash flash_star":"img_auto_height img_long_touch hidden"}/>
+        <img src={finger}
+             className={this.props.fileResult && (typeof (this.props.fileResult) === 'string')?"img_auto_height img_normal_finger animated infinite flash flash_star":"img_auto_height img_normal_finger hidden"}/>
         <div className="photo_group">
           <img src={this.props.fileResult?
                     ((typeof (this.props.fileResult) === 'object')?this.props.fileResult.toDataURL():this.props.fileResult + Config.waterMark):''}
