@@ -399,8 +399,13 @@ const IndexPage = React.createClass({
       this.pauseAudio();
     }
   },
-  showAppShare:function(){},
+  showAppShare:function(){
+
+  },
   showAppOpen:function(){
+
+  },
+  savePic:function(){
 
   },
   render:function(){
@@ -409,7 +414,9 @@ const IndexPage = React.createClass({
         {this.registerHandler()}
         {this.callHandler()}
         <div className="background_box">
-          <img className={this.state.audioFlag?"img_auto_height img_audio animated infinite audio_rotateIn animate_pause":"img_auto_height img_audio animated infinite audio_rotateIn"} src={this.state.audioFlag?audioStop:audioPlay} onClick={this.changeAudio}/>
+          <img className={this.state.audioFlag?"img_auto_height img_audio animated infinite audio_rotateIn animate_pause":
+              "img_auto_height img_audio animated infinite audio_rotateIn"}
+               src={this.state.audioFlag?audioStop:audioPlay} onClick={this.changeAudio}/>
           <audio className="audio_box hidden"
                  loop
                  src={bgm}
@@ -431,6 +438,7 @@ const IndexPage = React.createClass({
                      fileResult={this.state.fileResult}
                      jsBridge = {this.state.jsBridge}
                      showAppShare={this.showAppShare}
+                     savePic={this.savePic}
                      changePart={this.changePart}
                      changeLayer={this.changeLayer}
                      getFileOrigin={this.getFileOrigin}
