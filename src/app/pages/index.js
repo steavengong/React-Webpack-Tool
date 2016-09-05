@@ -15,6 +15,7 @@ const Divide = require('./divide/index');
 const TitlePriceBox = require('./title&price/index');
 const TimeAddressBox = require('./time&address/index');
 const UserHeadBox = require('./head/user/index');
+const TabBarBox = require('./tabbar/index');
 const ServePage = React.createClass({
   getInitialState:function(){
     return {
@@ -22,6 +23,9 @@ const ServePage = React.createClass({
         height:'10px',
         backgroundColor:'#C8C8C8'
       },
+      tabBarData: [
+        {title:'服务详情',active:true},{title:'服务须知',active:false},{title:'妈妈点评',active:false}
+      ],
       topImages:[],
       statusTime:{
         currentSystemDate:'',
@@ -103,6 +107,17 @@ const ServePage = React.createClass({
     }
     Util.getResponseFromJSON(options);
   },
+  changeTab:function(index){
+    const dataObjects = [];
+    this.state.tabBarData.forEach(function(dataObject,dataIndex){
+      dataObject.active = false;
+      if(dataIndex==index){
+        dataObject.active = true;
+      }
+      dataObjects.push(dataObject);
+    });
+    this.setState({tabBarData:dataObjects});
+  },
   componentDidMount:function(){
     this.initServeData();
   },
@@ -122,6 +137,8 @@ const ServePage = React.createClass({
         <Divide styleJSON={this.state.styleJSON}/>
         <UserHeadBox publicUser={this.state.publicUser}/>
         <Divide styleJSON={this.state.styleJSON}/>
+        <TabBarBox tabBarData={this.state.tabBarData}
+                changeTab={this.changeTab}/>
         <WXFoot/>
       </div>
     )

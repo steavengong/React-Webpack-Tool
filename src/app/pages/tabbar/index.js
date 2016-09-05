@@ -3,34 +3,45 @@
  */
 const React = require('react');
 require('./index.css');
-const TabBarItem = require('./item/index');
 const TabBarBox = React.createClass({
-    getInitialState:function(){
-      return {
-          data:[]
+  changeServeDetail:function(){
+    this.props.changeTab(0);
+  },
+  changeServeNotice:function(){
+    this.props.changeTab(1);
+  },
+  changeServeJudge:function(){
+    this.props.changeTab(2);
+  },
+  initTabBarItems:function(){
+    const items = [];
+    this.props.tabBarData.forEach(function(tabBar,index){
+      let clickFunc = '';
+      switch (index){
+        case 0:
+          clickFunc = this.changeServeDetail;
+          break;
+        case 1:
+          clickFunc = this.changeServeNotice;
+          break;
+        case 2:
+          clickFunc = this.changeServeJudge;
+          break;
       }
-    },
-    changeTab:function(data,dataIndex){
-        this.props.changeTab(data,dataIndex);
-    },
-    initTabBarItems:function(data){
-        const items = [];
-        if(data){
-            data.forEach(function(dataObject,index){
-                items.push(<TabBarItem data={dataObject} key={index} dataIndex={index} changeTab={this.changeTab}></TabBarItem>);
-            }.bind(this))
-        }
-        return items;
-    },
-    componentDidMount:function(){
-      this.setState({data:this.props.data});
-    },
-    render:function(){
-        return (
-            <div className="tab_bar_box">
-                {this.initTabBarItems(this.state.data)}
-            </div>
-        )
-    }
+      items.push(
+        <div className={tabBar.active?'tab_bar_item active':'tab_bar_item'} key={index} onClick={clickFunc}>
+          <span>{tabBar.title}</span>
+        </div>
+      );
+    }.bind(this))
+    return items;
+  },
+  render:function(){
+    return (
+      <div className="tab_bar_box">
+        {this.initTabBarItems()}
+      </div>
+    )
+  }
 })
 module.exports = TabBarBox;
