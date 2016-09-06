@@ -3,13 +3,13 @@
  */
 const Config = require('../../../common/config/index');
 
-Config.debug = true;
+Config.debug = false;
 let shareImage = require('../../assets/share.png');
 
-Config.requestWXAction = 'http://erpuat.mengbp.com:8090/wine-weixin-rest/cgi';
+Config.requestWXAction = 'http://weixin.mengbp.com/wine-weixin-rest/cgi';
 Config.requestWXActionDebug = 'http://erpuat.mengbp.com:8090/wine-weixin-rest/cgi';
 
-Config.upLoadAction = 'http://erpuat.mengbp.com:8090/wine-weixin-rest/cgi/';
+Config.upLoadAction = 'http://weixin.mengbp.com/wine-weixin-rest/';
 Config.upLoadActionDebug = 'http://erpuat.mengbp.com:8090/wine-weixin-rest/';
 
 Config.appId = 'wx5bb398c959489ae4';
