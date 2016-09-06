@@ -71,3 +71,4 @@ ul{
 }
 .mbp_star:before { content: "\e600"; }
 .mbp_star_fill:before { content: "\e601"; }
+.mbp_zan:before { content: "\e602"; }

@@ -10,6 +10,7 @@ const WXFoot = require('./foot/wx/index');
 const Divide = require('./divide/index');
 const UserHeadBox = require('./head/user/index');
 const TopicBodyBox = require('./body/topic/index');
+const SpotBox = require('./spot/index');
 //120 图文  117 视频
 const IndexPage = React.createClass({
   getInitialState:function(){
@@ -28,8 +29,12 @@ const IndexPage = React.createClass({
         contents:'',
         categorys:[],
         imgTxtList:[],
-        createDate:''
-      }
+        createDate:'',
+        rewardList:[]
+      },
+      replyList:[],
+      serviceList:[],
+      spotList:[],
     }
 
   },
@@ -63,21 +68,26 @@ const IndexPage = React.createClass({
       success:function(result){
         const response = result.response;
         if(response){
-          const data = response.data.objectData;
           console.log(response.data)
+          const objectData = response.data.objectData;
+          const businessData = response.data.businessData;
           const state = {
             userInfo:{
-              userNick:data.user.userNike,
-              userPresentation:data.user.userPresentation,
-              userSmallImg:data.user.userSmallImg
+              userNick:objectData.user.userNike,
+              userPresentation:objectData.user.userPresentation,
+              userSmallImg:objectData.user.userSmallImg
             },
             topicBodyData:{
-              title:data.title,
-              contents:data.contents,
-              categorys:data.categorys,
-              imgTxtList:data.imgTxtList,
-              createDate:data.createDate
-            }
+              title:objectData.title,
+              contents:objectData.contents,
+              categorys:objectData.categorys,
+              imgTxtList:objectData.imgTxtList,
+              createDate:objectData.createDate,
+              rewardList:businessData.rewardList
+            },
+            replyList:businessData.replyList,
+            serviceList:businessData.serviceList,
+            spotList:businessData.spotList,
           }
           console.log(state);
           this.setState(state);
@@ -105,7 +115,8 @@ const IndexPage = React.createClass({
         <UserHeadBox userInfo={this.state.userInfo}/>
         <Divide styleJSON={this.state.styleJSON}/>
         <TopicBodyBox topicBodyData={this.state.topicBodyData}/>
-        <Divide styleJSON={this.state.styleJSON}/>
+        <SpotBox styleJSON={this.state.styleJSON}
+                 spotList={this.state.spotList}/>
         <WXFoot/>
       </div>
     )
