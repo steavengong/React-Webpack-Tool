@@ -6,11 +6,11 @@ const ReactDom = require('react-dom');
 const Router = require('react-router').Router;
 const Route = require('react-router').Route;
 const hashHistory = require('react-router').hashHistory;
-const ServePage = require('./app/pages/index');
+const DetailPage = require('./app/pages/index');
 
 const router = (
   <Route path="/" >
-    <Route path=":id" component={ServePage}></Route>
+    <Route path=":id" component={DetailPage}></Route>
   </Route>
 )
 
