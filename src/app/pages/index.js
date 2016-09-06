@@ -82,8 +82,6 @@ const ServePage = React.createClass({
             userSmallImg:data.publicUser.userSmallImg,
             userNick:data.publicUser.userNike,
           }
-          console.log(data);
-
           const state = {
             topImages:topImages,
             statusTime:{
@@ -106,10 +104,7 @@ const ServePage = React.createClass({
             notice:notice,
             publicUser:publicUser
           }
-          console.log(state);
           this.setState(state);
-
-
           const shareObject = {
             title:title,
             desc:data.introduce,

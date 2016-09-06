@@ -99,11 +99,11 @@ const TabContentBox = React.createClass({
       judgeContents = [];
       this.state.judgeDatas.forEach(function(judge,index){
         const content = (
-          <div className="judge_content_item">
+          <div className="judge_content_item" key={index}>
             <div className='user_image_box'>
               <img src=
                      {judge.evaluateUser.userSmallImg?
-                     Util.compressImageFromWeb(judge.userSmallImg,'@414w'):defaultHead}
+                     judge.evaluateUser.userSmallImg+'@414w':defaultHead}
                    className="img_auto"/>
             </div>
             <div className='judge_content_body'>
@@ -122,6 +122,7 @@ const TabContentBox = React.createClass({
             </div>
           </div>
         )
+        judgeContents.push(content);
       }.bind(this))
     }
     else{
@@ -181,7 +182,7 @@ const TabContentBox = React.createClass({
     this.initJudgeData();
   },
   initJudgeData:function(){
-    Request.cmd = Config.cmds.serveDetail;
+    Request.cmd = Config.cmds.serviceEvaluate;
     Request.parameters = {
       "serviceId":this.props.serverId,
       "numberOfPerPage": 10,
@@ -191,6 +192,7 @@ const TabContentBox = React.createClass({
       url:Config.getRequestAction(),
       data:Request,
       success:function(result){
+        console.log('judgeData',result);
         let judgeDatas = [];
         if(result.response && result.response.data.content){
           judgeDatas = result.response.data.content;
