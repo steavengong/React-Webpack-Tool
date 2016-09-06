@@ -64,6 +64,7 @@ const ServePage = React.createClass({
       success:function(result){
         const response = result.response;
         if(response){
+
           const data = response.data.objectData;
           const topImages = data.topImages&&data.topImages.length>0?data.topImages:[];
           const currentSystemDate = data.currentSystemDate;
