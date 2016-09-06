@@ -79,6 +79,7 @@
     "react-router": "^2.7.0",
     "swiper": "^3.3.1",
     "url-params-helper": "^0.1.4",
+    "video.js": "^5.11.6",
     "weixin-js-sdk": "^1.0.7"
   }
 }
