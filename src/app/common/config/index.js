@@ -8,11 +8,9 @@ let shareImage = require('../../assets/share.png');
 
 Config.requestWXAction = 'http://erpuat.mengbp.com:8090/wine-weixin-rest/cgi';
 Config.requestWXActionDebug = 'http://erpuat.mengbp.com:8090/wine-weixin-rest/cgi';
-//Config.requestLocalWXAction = 'http://192.168.100.164:8081/wine-weixin-rest/cgi';
 
 Config.upLoadAction = 'http://erpuat.mengbp.com:8090/wine-weixin-rest/cgi/';
 Config.upLoadActionDebug = 'http://erpuat.mengbp.com:8090/wine-weixin-rest/';
-//Config.upLoadLocalAction = 'http://192.168.100.164:8081/wine-weixin-rest/';
 
 Config.appId = 'wx5bb398c959489ae4';
 Config.appIdDebug = 'wx03fc01e909d9a654';

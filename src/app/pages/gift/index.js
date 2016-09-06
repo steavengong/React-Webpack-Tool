@@ -25,7 +25,7 @@ const GiftLayer = React.createClass({
       this.props.showAppOpen();
     }
     else{
-      window.location.href="http://www.baidu.com";
+      window.location.href="http://a.app.qq.com/o/simple.jsp?pkgname=com.cmbb.smartkids";
     }
   },
   render:function(){
