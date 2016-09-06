@@ -27,7 +27,7 @@
     position: absolute;
     z-index: 10;
     width: 16%;
-    bottom: 3%;
+    bottom: 1%;
     left: 18%;
 }
 
@@ -43,7 +43,7 @@
     position: absolute;
     z-index: 10;
     width: 16%;
-    bottom: 3%;
+    bottom: 1%;
     right: 18%;
 }
 
@@ -95,4 +95,12 @@
   left: calc((100% - 13.07% )/2 );
   left: -webkit-calc((100% - 13.07% )/2 );
   top: 25%;
+}
+
+.img_photo_attention{
+  position: absolute;
+  width: 70.27%;
+  left: calc((100% - 70.27%) / 2);
+  left: -webkit-calc((100% - 70.27%) / 2);
+  bottom: 15%;
 }

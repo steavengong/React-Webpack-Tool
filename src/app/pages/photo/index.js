@@ -14,6 +14,7 @@ let rule = require('../../assets/rule.png');
 let longTouchText = require('../../assets/long_touch.png');
 let simpleTouchText = require('../../assets/simple_touch.png');
 let finger = require('../../assets/finger_normal.png');
+let attention = require('../../assets/photo_attention.png');
 const PhotoPart = React.createClass({
   showLocalPhotoCropLayer:function(event){
     const files = event.target.files;
@@ -84,6 +85,8 @@ const PhotoPart = React.createClass({
                "img_auto_height img_photo_border hidden"):
                "img_auto_height img_photo_border"}/>
         </div>
+        <img src={attention} className={this.props.fileResult&&(typeof (this.props.fileResult) === 'string')?
+        "img_auto_height img_photo_attention hidden":"img_auto_height img_photo_attention"}/>
         <div className={this.props.needJoin?"choose_photo":"choose_photo hidden"}>
           <img src={choosePhoto} className="img_auto_height"/>
           <input type="file" className="input_photo_file" accept="image/*" onChange={this.showLocalPhotoCropLayer}/>
