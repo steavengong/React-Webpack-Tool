@@ -11,6 +11,7 @@ const Divide = require('./divide/index');
 const UserHeadBox = require('./head/user/index');
 const TopicBodyBox = require('./body/topic/index');
 const SpotBox = require('./spot/index');
+const ServerRecommendBox = require('./service/index');
 //120 图文  117 视频
 const IndexPage = React.createClass({
   getInitialState:function(){
@@ -117,6 +118,8 @@ const IndexPage = React.createClass({
         <TopicBodyBox topicBodyData={this.state.topicBodyData}/>
         <SpotBox styleJSON={this.state.styleJSON}
                  spotList={this.state.spotList}/>
+        <ServerRecommendBox styleJSON={this.state.styleJSON}
+                            serviceList={this.state.serviceList}/>
         <WXFoot/>
       </div>
     )
