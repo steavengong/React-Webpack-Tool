@@ -9,20 +9,29 @@ const WXHead = require('./head/wx/index');
 const WXFoot = require('./foot/wx/index');
 const Divide = require('./divide/index');
 const UserHeadBox = require('./head/user/index');
+const TopicBodyBox = require('./body/topic/index');
 //120 图文  117 视频
 const IndexPage = React.createClass({
   getInitialState:function(){
-     return {
-       styleJSON:{
-         height:'10px',
-         backgroundColor:'#C8C8C8'
-       },
-       userInfo:{
-         userNick:'',
-         userPresentation:'',
-         userSmallImg:''
-       }
-     }
+    return {
+      styleJSON:{
+        height:'10px',
+        backgroundColor:'#C8C8C8'
+      },
+      userInfo:{
+        userNick:'',
+        userPresentation:'',
+        userSmallImg:''
+      },
+      topicBodyData:{
+        title:'',
+        contents:'',
+        categorys:[],
+        imgTxtList:[],
+        createDate:''
+      }
+    }
+
   },
   setWXSign:function(shareObject){
     if(Util.isWX()){
@@ -61,19 +70,26 @@ const IndexPage = React.createClass({
               userNick:data.user.userNike,
               userPresentation:data.user.userPresentation,
               userSmallImg:data.user.userSmallImg
+            },
+            topicBodyData:{
+              title:data.title,
+              contents:data.contents,
+              categorys:data.categorys,
+              imgTxtList:data.imgTxtList,
+              createDate:data.createDate
             }
           }
           console.log(state);
           this.setState(state);
 
           /*const shareObject = {
-            title:title,
-            desc:data.introduce,
-            link:Config.shareObject.link + "#/"+this.props.params.id,
-            imgUrl:topImages[0].location + "@414w"
-          }
+           title:title,
+           desc:data.introduce,
+           link:Config.shareObject.link + "#/"+this.props.params.id,
+           imgUrl:topImages[0].location + "@414w"
+           }
 
-          this.setWXSign(shareObject)*/
+           this.setWXSign(shareObject)*/
         }
       }.bind(this)
     }
@@ -88,6 +104,7 @@ const IndexPage = React.createClass({
         <WXHead/>
         <UserHeadBox userInfo={this.state.userInfo}/>
         <Divide styleJSON={this.state.styleJSON}/>
+        <TopicBodyBox topicBodyData={this.state.topicBodyData}/>
         <WXFoot/>
       </div>
     )

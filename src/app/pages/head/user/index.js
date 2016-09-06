@@ -12,8 +12,8 @@ const UserHeadBox = React.createClass({
           <img src={this.props.userInfo.userSmallImg?this.props.userInfo.userSmallImg+'@45w':defaultHead} className="img_auto"/>
         </div>
         <div className="user_info_box">
-          <div>fadsffssdf</div>
-          <div>fadsffssdf</div>
+          <div className="user_name">{this.props.userInfo.userNick}</div>
+          <div className="user_presentation">{this.props.userInfo.userPresentation||'这个人很懒！什么都没写！'}</div>
         </div>
       </div>
     )

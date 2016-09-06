@@ -15,8 +15,16 @@
   overflow: hidden;
 }
 
+.user_info_box{
+  line-height: 23px;
+}
+
 .user_name{
   color: #666666;
   font-weight: 700;
   margin-right: 10px;
+}
+
+.user_presentation{
+  color: #FFFFFF;
 }

@@ -1,0 +1,44 @@
+/*topic_body_box*/
+.topic_body_box{
+  background-color: #FFFFFF;
+  padding: 10px;
+  line-height: 30px;
+}
+
+.topic_title{
+  font-size: 16px;
+  color: #333333;
+}
+
+.topic_category{
+  line-height: 20px;
+  font-size: 14px;
+  color: #999999;
+  margin-bottom: 10px;
+}
+
+.topic_category>span + span{
+  margin-left: 10px;
+}
+
+.topic_content{
+  line-height: 20px;
+  font-size: 14px;
+  color: #666666;
+  margin-bottom: 10px;
+}
+
+.topic_item + .topic_item{
+  margin-top: 10px;
+}
+
+.topic_item_content{
+  margin-top: 10px;
+  line-height: 20px;
+  font-size: 14px;
+  color: #666666;
+}
+
+.video .custom-video{
+
+}
