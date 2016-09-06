@@ -3,8 +3,6 @@
  */
 const React = require('react');
 require('./index.css');
-require('video.js/dist/video.min');
-require('video.js/dist/video-js.min.css');
 const TopicBodyBox = React.createClass({
   initCategories:function(){
     const categories = [];
@@ -21,16 +19,6 @@ const TopicBodyBox = React.createClass({
       if(attachment.extensionType==0){
         content = (
           <div className="topic_item" key={index}>
-            <video class="video-js vjs-default-skin" controls
-                   preload="auto" width="640" height="264" poster="really-cool-video-poster.jpg"
-                   data-setup='{}'>
-              <source src="really-cool-video.mp4" type="video/mp4"/>
-              <source src="really-cool-video.webm" type="video/webm"/>
-              <p class="vjs-no-js">
-                To view this video please enable JavaScript, and consider upgrading to a web browser
-                that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-              </p>
-            </video>
             <img src={attachment.location+'@414w'} className="img_auto"/>
             <div className={each.content?"topic_item_content":"topic_item_content hidden"}>
               {each.content}
@@ -39,9 +27,12 @@ const TopicBodyBox = React.createClass({
         )
       }
       else if(attachment.extensionType==2){
+        require('video.js/dist/video-js.min.css');
         content = (
           <div className="topic_item" key={index}>
-
+            <video className="video-js vjs-default-skin vjs-big-play-centered"  controls autoPlay>
+              <source src={attachment.location} type="video/mp4"></source>
+            </video>
             <div className={each.content?"topic_item_content":"topic_item_content hidden"}>
               {each.content}
             </div>
@@ -51,9 +42,6 @@ const TopicBodyBox = React.createClass({
       contents.push(content);
     }.bind(this))
     return contents;
-  },
-  onClickPlay:function(){
-    this.refs.VideoComp0.play();
   },
   render:function(){
     return (

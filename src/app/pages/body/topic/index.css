@@ -39,6 +39,6 @@
   color: #666666;
 }
 
-.video .custom-video{
-
+.topic_item>video{
+  width: 100%;
 }

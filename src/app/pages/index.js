@@ -64,7 +64,7 @@ const IndexPage = React.createClass({
         const response = result.response;
         if(response){
           const data = response.data.objectData;
-          console.log(data)
+          console.log(response.data)
           const state = {
             userInfo:{
               userNick:data.user.userNike,
@@ -105,6 +105,7 @@ const IndexPage = React.createClass({
         <UserHeadBox userInfo={this.state.userInfo}/>
         <Divide styleJSON={this.state.styleJSON}/>
         <TopicBodyBox topicBodyData={this.state.topicBodyData}/>
+        <Divide styleJSON={this.state.styleJSON}/>
         <WXFoot/>
       </div>
     )
