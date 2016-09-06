@@ -13,7 +13,6 @@ const TopicBodyBox = require('./body/topic/index');
 const SpotBox = require('./spot/index');
 const ServerRecommendBox = require('./service/index');
 const ReplyBox = require('./reply/index');
-//120 图文  117 视频
 const IndexPage = React.createClass({
   getInitialState:function(){
     return {
@@ -70,7 +69,6 @@ const IndexPage = React.createClass({
       success:function(result){
         const response = result.response;
         if(response){
-          console.log(response.data)
           const objectData = response.data.objectData;
           const businessData = response.data.businessData;
           const state = {
@@ -91,7 +89,6 @@ const IndexPage = React.createClass({
             serviceList:businessData.serviceList,
             spotList:businessData.spotList,
           }
-          console.log(state);
           this.setState(state);
 
           const shareObject = {
