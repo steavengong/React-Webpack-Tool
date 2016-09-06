@@ -192,7 +192,6 @@ const TabContentBox = React.createClass({
       url:Config.getRequestAction(),
       data:Request,
       success:function(result){
-        console.log('judgeData',result);
         let judgeDatas = [];
         if(result.response && result.response.data.content){
           judgeDatas = result.response.data.content;
