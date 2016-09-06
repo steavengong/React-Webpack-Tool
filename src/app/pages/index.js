@@ -94,14 +94,16 @@ const IndexPage = React.createClass({
           console.log(state);
           this.setState(state);
 
-          /*const shareObject = {
-           title:title,
-           desc:data.introduce,
-           link:Config.shareObject.link + "#/"+this.props.params.id,
-           imgUrl:topImages[0].location + "@414w"
-           }
+          const shareObject = {
+            title:objectData.title,
+            desc:objectData.title,
+            link:Config.shareObject.link + "#/"+this.props.params.id,
+            imgUrl:objectData.imgTxtList[0].attachments[0].extensionType==0?
+            objectData.imgTxtList[0].attachments[0].location+'@50w':
+              objectData.imgTxtList[0].attachments[0].attachmentExtData.thumbnail+'@50w'
+          }
 
-           this.setWXSign(shareObject)*/
+          this.setWXSign(shareObject)
         }
       }.bind(this)
     }
