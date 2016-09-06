@@ -1,5 +1,5 @@
 const React = require("React");
-const Util = require('../../../../../util/index');
+const Util = require('../../common/util/index');
 
 const replyItem = React.createClass({
   render:function(){

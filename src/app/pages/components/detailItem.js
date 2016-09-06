@@ -1,8 +1,8 @@
 const React = require("React");
 const DetailImgContext = require("./detailImgContext");
-const UWX = require('../../../../../wx/index');
-const CommonBean = require('../../../commonBean/index');
-const Config = require('../../../config/index');
+const Util = require('../../common/util/index');
+const Request = require('../../common/request/index');
+const Config = require('../../common/request/index');
 
 const detailItem=React.createClass({
   componentWillMount:function(){
@@ -15,23 +15,26 @@ const detailItem=React.createClass({
         img =  attachments[0].location;
       }
     }
-    CommonBean.cmd = Config.cmds.wxJSSign;
-    CommonBean.parameters = {
+    Request.cmd = Config.cmds.wxJSSign;
+    Request.parameters = {
         'url':window.location.href.split('#')[0]
     }
+    const shareObject = {
+      title:details.objectData.title,
+      desc:details.objectData.contents,
+      imgUrl:img,
+      link:window.location.href
+      }
     const wxOptions = {
         url:Config.getRequestWXAction(),
-        data:CommonBean,
+        data:Request,
         appId:Config.getAppId(),
         debug:Config.debug,
-        shareObject:{
-            title:details.objectData.title,
-            desc:details.objectData.contents,
-            imgUrl:img,
-            link:window.location.href
+        wxReady:function(){
+          Util.shareItems(shareObject);
         }
     }
-    UWX.setJSSign(wxOptions);
+    Util.setJSSign(wxOptions);
   },
   render:function(){
     const details = this.props.data;
