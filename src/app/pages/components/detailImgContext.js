@@ -1,5 +1,7 @@
 const React = require("React");
 const Util = require('../../common/util/index');
+const video = require('video.js').default;
+require('video.js/dist/video-js.min.css');
 
 const detailImgContext = React.createClass({
   render:function(){
