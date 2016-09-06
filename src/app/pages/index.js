@@ -63,7 +63,6 @@ const ServePage = React.createClass({
       data:Request,
       success:function(result){
         const response = result.response;
-
         if(response){
           const data = response.data.objectData;
           const topImages = data.topImages&&data.topImages.length>0?data.topImages:[];
