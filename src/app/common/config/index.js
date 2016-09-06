@@ -19,17 +19,8 @@ Config.appIdDebug = 'wx03fc01e909d9a654';
 
 Config.cmds = {
   topicDetail:'smart/topic/detail',
-  serveDetail:'smart/services/getServicesDetails',
-  serviceEvaluate:'smart/serviceEvaluate/getPage',
   wxJSSign:'christ/weixin/setSign',
-  detailDetail:'smart/topic/detail'
 }
-
-
-Config.urlParams = {
-    detailId:'detailId'
-}
-
 
 Config.shareObject = {
     title:"萌宝派",
