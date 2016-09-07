@@ -8,6 +8,11 @@
   line-height: 20px;
 }
 
+.title_box{
+  font-size: 16px;
+  line-height: 25px;
+}
+
 .title_price_box>div{
   padding: 7px 0px;
 }
