@@ -30,7 +30,9 @@ const TabBarBox = React.createClass({
       }
       items.push(
         <div className={tabBar.active?'tab_bar_item active':'tab_bar_item'} key={index} onClick={clickFunc}>
-          <span>{tabBar.title}</span>
+          <span className="tab_bar_item_title">{tabBar.title}
+            <span className="current_target"></span>
+          </span>
         </div>
       );
     }.bind(this))
