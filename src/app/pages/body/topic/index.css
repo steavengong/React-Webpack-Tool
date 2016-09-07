@@ -39,6 +39,15 @@
   color: #666666;
 }
 
-.topic_item>video{
+.topic_item_video{
+  position: relative;
   width: 100%;
+  padding-bottom: 56.25%;
+  background-color: red;
+}
+
+.topic_item_video>video{
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }

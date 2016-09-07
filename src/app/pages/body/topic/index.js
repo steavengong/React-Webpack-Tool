@@ -30,9 +30,11 @@ const TopicBodyBox = React.createClass({
         require('video.js/dist/video-js.min.css');
         content = (
           <div className="topic_item" key={index}>
-            <video className="video-js vjs-default-skin vjs-big-play-centered"  controls autoPlay>
-              <source src={attachment.location} type="video/mp4"></source>
-            </video>
+            <div className="topic_item_video">
+              <video className="video-js vjs-default-skin vjs-big-play-centered"  controls>
+                <source src={attachment.location} type="video/mp4"></source>
+              </video>
+            </div>
             <div className={each.content?"topic_item_content":"topic_item_content hidden"}>
               {each.content}
             </div>
