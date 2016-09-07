@@ -1,0 +1,64 @@
+/*AppBody*/
+
+
+
+.app_body_bg_col{
+  padding-bottom: 50.27%;
+  position: relative;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.app_body_bg_col>.img_main_bg{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 2;
+}
+
+.main_bg_left{
+  width: 43%;
+  background-color: #a6cae3;
+  position: absolute;
+  z-index:1;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.main_bg_right{
+  width: 57%;
+  background-color: #ffb3cc;
+  position: absolute;
+  z-index:1;
+  left: 43%;
+  top: 0;
+  bottom: 0;
+}
+
+.main_bg_border{
+  position: absolute;
+  z-index: 3;
+  width: 58%;
+  padding-bottom: 43.28%;
+  left: 30px;
+  bottom: 0;
+  border: 3px solid #FFFFFF;
+  border-bottom: none;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  -webkit-border-top-left-radius: 7px;
+  -webkit-border-top-right-radius: 7px;
+  -moz-border-radius-topleft: 7px;
+  -moz-border-radius-topright: 7px;
+}
+
+.img_app_model{
+  position: absolute;
+  display: block;
+  z-index:4;
+  width: 22.85%;
+  height: auto;
+  top: 5%;
+  right: 28%;
+}
