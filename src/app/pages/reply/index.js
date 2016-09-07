@@ -13,7 +13,7 @@ const ReplyBox = React.createClass({
       const item = (
         <div className="reply_item" key={index}>
           <div className="reply_item_user_head">
-            <img src={reply.user.userSmallImg?reply.user.userSmallImg+'@30w':defaultHead} className="img_auto"/>
+            <img src={reply.user.userSmallImg?reply.user.userSmallImg+'@30w':defaultHead} className="img_inherit"/>
           </div>
           <div className="reply_item_body">
             <div className="reply_item_user_nick">

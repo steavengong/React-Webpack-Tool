@@ -27,6 +27,7 @@
 .reply_item_user_head{
   float: left;
   width: 30px;
+  height: 30px;
 }
 
 .reply_item_user_head>img{

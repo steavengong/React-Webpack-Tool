@@ -9,7 +9,7 @@ const UserHeadBox = React.createClass({
     return (
       <div className="user_head_box">
         <div className="user_image_box">
-          <img src={this.props.userInfo.userSmallImg?this.props.userInfo.userSmallImg+'@45w':defaultHead} className="img_auto"/>
+          <img src={this.props.userInfo.userSmallImg?this.props.userInfo.userSmallImg+'@45w':defaultHead} className="img_inherit"/>
         </div>
         <div className="user_info_box">
           <div className="user_name">{this.props.userInfo.userNick}</div>
