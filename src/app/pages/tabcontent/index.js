@@ -104,7 +104,7 @@ const TabContentBox = React.createClass({
               <img src=
                      {judge.evaluateUser.userSmallImg?
                      judge.evaluateUser.userSmallImg+'@414w':defaultHead}
-                   className="img_auto"/>
+                   className="img_inherit"/>
             </div>
             <div className='judge_content_body'>
               <div className="user_name_box">
@@ -168,12 +168,10 @@ const TabContentBox = React.createClass({
         break;
     }
     images.forEach(function(image,index){
-      const style = {
-        backgroundImage: 'url('+ Util.compressImageFromWeb(image.location,'@414w') +')',
-        WebkitBackgroundImage: 'url('+ Util.compressImageFromWeb(image.location,'@414w') +')'
-      }
       judgeImages.push(
-        <div className={judgeClassName} key={index} style={style}></div>
+        <div className={judgeClassName} key={index}>
+          <img src={image.location+'@414w'}/>
+        </div>
       )
     })
     return judgeImages;

@@ -22,7 +22,7 @@ const SwipeHead = React.createClass({
       topImages.forEach(function(topImage,index){
         items.push(
           <div className="swiper-slide" key={index}>
-            <img src={topImage.location + '@414w'} className="img_auto"/>
+            <img src={topImage.location + '@414w'} className="img_inherit"/>
           </div>
         );
       })
