@@ -62,3 +62,13 @@
   top: 5%;
   right: 28%;
 }
+
+.img_qr_code{
+  position: absolute;
+  display: block;
+  z-index:4;
+  width: 19.44%;
+  height: auto;
+  right: 1%;
+  bottom: 1.5%;
+}

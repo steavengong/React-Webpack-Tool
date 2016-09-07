@@ -5,6 +5,7 @@ const React = require('react');
 import {Grid,Row,Col} from 'react-bootstrap'
 let mainBg = require('../../../assets/mbp_main_bg.png');
 let appModel = require('../../../assets/mpb_app_model.png');
+let qrCode = require('../../../assets/mbp_qr_code.png');
 require('./index.css');
 const AppBody = React.createClass({
   render:function(){
@@ -17,6 +18,7 @@ const AppBody = React.createClass({
             <div className="main_bg_right"></div>
             <div className="main_bg_border"></div>
             <img src={appModel} className="img_app_model"/>
+            <img src={qrCode} className="img_qr_code"/>
           </Col>
         </Row>
       </Grid>
