@@ -3,12 +3,14 @@
  */
 const React = require('react');
 require('bootstrap/dist/css/bootstrap.min.css');
+require('../styles/base.css');
 require('./index.css');
+const LogoHead = require('./head/logo/index');
 const IndexPage = React.createClass({
   render:function(){
     return (
       <div className="home_page">
-
+        <LogoHead/>
       </div>
     )
   }

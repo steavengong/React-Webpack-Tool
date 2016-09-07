@@ -1,1 +1,82 @@
 /*base*/
+.bg_dark{
+  background-color: #535353;
+}
+
+.img_auto{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.padding_small_top,
+.padding_small_vertical{
+  padding-top: 2px;
+}
+
+.padding_small_bottom,
+.padding_small_vertical{
+  padding-bottom: 2px;
+}
+
+.padding_small_left,
+.padding_small_horizontal{
+  padding-left: 2px;
+}
+
+.padding_small_right,
+.padding_small_horizontal{
+  padding-right: 2px;
+}
+
+.padding_small{
+  padding: 2px;
+}
+
+.padding_normal_top,
+.padding_normal_vertical{
+  padding-top: 5px;
+}
+
+.padding_normal_bottom,
+.padding_normal_vertical{
+  padding-bottom: 5px;
+}
+
+.padding_normal_left,
+.padding_normal_horizontal{
+  padding-left: 5px;
+}
+
+.padding_normal_right,
+.padding_normal_horizontal{
+  padding-right: 5px;
+}
+
+.padding_normal{
+  padding: 5px;
+}
+
+.padding_big_top,
+.padding_big_vertical{
+  padding-top: 10px;
+}
+
+.padding_big_bottom,
+.padding_big_vertical{
+  padding-bottom: 10px;
+}
+
+.padding_big_left,
+.padding_big_horizontal{
+  padding-left: 10px;
+}
+
+.padding_big_right,
+.padding_big_horizontal{
+  padding-right: 10px;
+}
+
+.padding_big{
+  padding: 10px;
+}
