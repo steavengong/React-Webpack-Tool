@@ -10,8 +10,8 @@ const ServerRecommendBox = React.createClass({
     this.props.serviceList.forEach(function(server,index){
       const item = (
         <div className="server_recommend_item" key={index}>
-          <div className="server_recommend_item_image">
-            <img src={server.topImages[0].location+'@200w'} className="img_auto"/>
+          <div className="server_recommend_item_image bg_box_4_3">
+            <img src={server.topImages[0].location+'@200w'}/>
           </div>
           <div className="server_recommend_item_title">
             {server.title}

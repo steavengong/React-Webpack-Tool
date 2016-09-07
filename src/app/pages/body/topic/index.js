@@ -30,7 +30,7 @@ const TopicBodyBox = React.createClass({
         require('video.js/dist/video-js.min.css');
         content = (
           <div className="topic_item" key={index}>
-            <div className="topic_item_video">
+            <div className="topic_item_video bg_box_16_9">
               <video className="video-js vjs-default-skin vjs-big-play-centered"  controls>
                 <source src={attachment.location} type="video/mp4"></source>
               </video>

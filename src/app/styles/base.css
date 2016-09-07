@@ -9,9 +9,19 @@ body{
     background-color: #FFFFFF;
 }
 
+.bg_box_16_9{
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+
 .bg_box_4_3{
     width: 100%;
     padding-bottom: 75%;
+}
+
+.bg_box_1_1{
+  width: 100%;
+  padding-bottom: 100%;
 }
 
 .img_auto{
