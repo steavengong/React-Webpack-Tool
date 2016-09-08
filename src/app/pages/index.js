@@ -11,7 +11,7 @@ const SectionPartBox = require('./body/section/index');
 const IndexPage = React.createClass({
   getInitialState:function(){
     return {
-      logoLink:Config.logoLink,
+      logoParts:Config.logoParts,
       sectionParts:Config.sectionParts
     }
   },
@@ -19,7 +19,7 @@ const IndexPage = React.createClass({
     return (
       <div className="home_page">
         <div className="home_page_top">
-          <NavHeadBox logoLink={this.state.logoLink}/>
+          <NavHeadBox logoParts={this.state.logoParts}/>
         </div>
         <div className="home_page_body">
           <SectionPartBox sectionParts={this.state.sectionParts}/>

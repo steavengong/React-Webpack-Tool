@@ -10,8 +10,11 @@ const NavHeadBox = React.createClass({
         <div className="container bg_dark">
           <div className="nav_bar">
             <div className="logo">
-              <a href={this.props.logoLink}></a>
+              <a>
+                <img className="img_auto_width" src={this.props.logoParts.logoImage}/>
+              </a>
             </div>
+
           </div>
         </div>
       </div>
