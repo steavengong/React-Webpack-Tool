@@ -4,6 +4,7 @@
 const React = require('react');
 require('./index.css');
 const Divide = require('../divide/index');
+const LazyLoad = require('react-lazy-load');
 const ServerRecommendBox = React.createClass({
   initServerRecommendData:function(){
     const servers = [];
@@ -11,7 +12,9 @@ const ServerRecommendBox = React.createClass({
       const item = (
         <div className="server_recommend_item" key={index}>
           <div className="server_recommend_item_image bg_box_4_3">
-            <img src={server.topImages[0].location+'@200w'}/>
+            <LazyLoad>
+              <img src={server.topImages[0].location+'@200w'}/>
+            </LazyLoad>
           </div>
           <div className="server_recommend_item_title">
             {server.title}

@@ -40,7 +40,7 @@
   position: relative;
 }
 
-.server_recommend_item_image>img{
+.server_recommend_item_image img{
   position: absolute;
   display: block;
   width: 100%;

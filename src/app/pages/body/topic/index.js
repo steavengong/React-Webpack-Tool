@@ -3,6 +3,7 @@
  */
 const React = require('react');
 require('./index.css');
+const LazyLoad = require('react-lazy-load');
 const TopicBodyBox = React.createClass({
   initCategories:function(){
     const categories = [];
@@ -19,7 +20,9 @@ const TopicBodyBox = React.createClass({
       if(attachment.extensionType==0){
         content = (
           <div className="topic_item" key={index}>
-            <img src={attachment.location+'@414w'} className="img_auto"/>
+            <LazyLoad>
+              <img src={attachment.location+'@414w'} className="img_auto"/>
+            </LazyLoad>
             <div className={each.content?"topic_item_content":"topic_item_content hidden"}>
               {each.content}
             </div>
