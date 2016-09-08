@@ -7,10 +7,18 @@ const SectionPartBox = React.createClass({
   initSectionPart:function(){
     const sectionParts = [];
     this.props.sectionParts.forEach(function(sectionPart,index){
+      const style = {
+        background:"url("+ sectionPart.bgImage +") center center no-repeat",
+        backgroundSize:"100%"
+      }
       const part = (
         <div className="section_part_item" key={index}>
           <div className="container">
-            我是主题
+            <div className="section_part_item_body" style={style}>
+                <div className="section_part_item_text_phone">
+
+                </div>
+            </div>
           </div>
         </div>
       )

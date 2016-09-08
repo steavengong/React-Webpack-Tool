@@ -1,6 +1,8 @@
 /*nav_head_box*/
 .nav_bar{
+  width: 100%;
   height: 48px;
+  overflow: hidden;
 }
 
 .logo{
