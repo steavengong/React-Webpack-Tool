@@ -1,1 +1,10 @@
 /*base*/
+.bg_dark{
+  background-color: #535353;
+}
+
+.container{
+  width: 1280px;
+  margin: 0px auto;
+  position: relative;
+}

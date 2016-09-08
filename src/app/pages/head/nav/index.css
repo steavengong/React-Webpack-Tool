@@ -1,0 +1,17 @@
+/*nav_head_box*/
+.nav_bar{
+  height: 48px;
+}
+
+.logo{
+  float: left;
+  margin: 0px 10px;
+}
+
+.logo>a{
+  display: block;
+  height: 48px;
+  width: 144.92px;
+  background: url('../../../assets/mbp_logo_head.png') center center no-repeat;
+  background-size: 70%;
+}
