@@ -29,4 +29,6 @@ Config.shareObject = {
     imgUrl:shareImage,
 }
 
+Config.videoResize = "?vframe/png/offset/1/w/50/h/50";
+
 module.exports = Config;
