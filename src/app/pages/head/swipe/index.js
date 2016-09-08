@@ -21,8 +21,9 @@ const SwipeHead = React.createClass({
     if(topImages.length>0){
       topImages.forEach(function(topImage,index){
         items.push(
-          <div className="swiper-slide" key={index}>
-            <img src={topImage.location + '@414w'} className="img_inherit"/>
+          <div className="swiper-slide " key={index}>
+            <img data-src={topImage.location + '@414w'} className="img_inherit swiper-lazy"/>
+            <div className="swiper-lazy-preloader"></div>
           </div>
         );
       })
@@ -40,6 +41,7 @@ const SwipeHead = React.createClass({
       }
       swipeOptions.autoplayDisableOnInteraction = false;
       swipeOptions.observer = true;
+      swipeOptions.lazyLoading = true;
       swipeOptions.observeParents = true;
       this.swiper = new Swipe(swipeName,swipeOptions);
     }
