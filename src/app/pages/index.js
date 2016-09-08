@@ -18,8 +18,12 @@ const IndexPage = React.createClass({
   render:function(){
     return (
       <div className="home_page">
-        <NavHeadBox logoLink={this.state.logoLink}/>
-        <SectionPartBox sectionParts={this.state.sectionParts}/>
+        <div className="home_page_top">
+          <NavHeadBox logoLink={this.state.logoLink}/>
+        </div>
+        <div className="home_page_body">
+          <SectionPartBox sectionParts={this.state.sectionParts}/>
+        </div>
       </div>
     )
   }

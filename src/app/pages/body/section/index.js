@@ -7,16 +7,19 @@ const SectionPartBox = React.createClass({
   initSectionPart:function(){
     const sectionParts = [];
     this.props.sectionParts.forEach(function(sectionPart,index){
-      const style = {
-        background:"url("+ sectionPart.bgImage +") center center no-repeat",
-        backgroundSize:"100%"
-      }
       const part = (
         <div className="section_part_item" key={index}>
           <div className="container">
-            <div className="section_part_item_body" style={style}>
-                <div className="section_part_item_text_phone">
-
+            <div className="section_part_item_body">
+                <div className="section_part_item_bg_image">
+                  <img src={sectionPart.bgImage} className="img_auto_height"/>
+                </div>
+                <div className="section_part_item_inner_border"></div>
+                <div className="section_part_item_phone">
+                  <img src={sectionPart.phoneImage} className="img_absolute img_auto_height"/>
+                </div>
+                <div className="section_part_item_qr_code">
+                  <img src={sectionPart.qrCode} className="img_absolute img_auto_height"/>
                 </div>
             </div>
           </div>

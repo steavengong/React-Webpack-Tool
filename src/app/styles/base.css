@@ -8,3 +8,13 @@
   margin: 0px auto;
   position: relative;
 }
+
+.img_absolute{
+  position: absolute;
+}
+
+.img_auto_height{
+  display: block;
+  width: 100%;
+  height: auto;
+}

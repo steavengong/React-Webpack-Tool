@@ -7,7 +7,13 @@
   overflow: hidden;
 }
 
-.section_part_item_text_phone{
+.section_part_item_bg_image{
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+}
+
+.section_part_item_inner_border{
   width: 58%;
   padding-bottom: 43.28%;
   border: 3px solid #FFFFFF;
@@ -21,4 +27,23 @@
   position: absolute;
   bottom: 0px;
   left: 60px;
+  z-index: 2;
+}
+
+.section_part_item_phone{
+  position: absolute;
+  width: 22.93%;
+  padding-bottom: 44.6%;
+  z-index: 3;
+  bottom: 6%;
+  right: 26%;
+}
+
+.section_part_item_qr_code{
+  position: absolute;
+  width: 19.44%;
+  padding-bottom: 13.13%;
+  z-index: 3;
+  bottom: 2%;
+  right: 1%;
 }
