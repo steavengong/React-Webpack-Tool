@@ -6,6 +6,7 @@ require('./index.css');
 const Util = require('../../common/util/index');
 const Request = require('../../common/request/index');
 const Config = require('../../common/config/index');
+const LazyLoad = require('react-lazy-load');
 let defaultHead = require('../../assets/head_default.png');
 const TabContentBox = React.createClass({
   getInitialState:function(){
@@ -70,7 +71,9 @@ const TabContentBox = React.createClass({
     const imageContents = [];
     images.forEach(function(image,index){
       imageContents.push(
-        <img src={image.location+'@414w'} className="img_auto" key={index}/>
+        <LazyLoad  key={index}>
+          <img src={image.location+'@414w'} className="img_auto"/>
+        </LazyLoad>
       )
     }.bind(this))
     return imageContents;
@@ -170,7 +173,9 @@ const TabContentBox = React.createClass({
     images.forEach(function(image,index){
       judgeImages.push(
         <div className={judgeClassName} key={index}>
-          <img src={image.location+'@414w'}/>
+          <LazyLoad>
+            <img src={image.location+'@414w'}/>
+          </LazyLoad>
         </div>
       )
     })

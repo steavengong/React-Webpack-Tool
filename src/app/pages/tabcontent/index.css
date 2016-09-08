@@ -92,7 +92,7 @@
   position: relative;
 }
 
-.judge_image_item>img{
+.judge_image_item img{
   display: block;
   position: absolute;
   width: 100%;
