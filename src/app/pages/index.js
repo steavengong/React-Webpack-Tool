@@ -95,9 +95,9 @@ const IndexPage = React.createClass({
             title:objectData.title,
             desc:objectData.title,
             link:Config.shareObject.link + "#/"+this.props.params.id,
-            imgUrl:objectData.imgTxtList[0].attachments[0].extensionType==0?
+            imgUrl:objectData.imgTxtList.length>0?(objectData.imgTxtList[0].attachments[0].extensionType==0?
             objectData.imgTxtList[0].attachments[0].location+'@50w':
-              objectData.imgTxtList[0].attachments[0].location + Config.videoResize
+            objectData.imgTxtList[0].attachments[0].location + Config.videoResize):Config.shareObject.imgUrl
           }
 
           this.setWXSign(shareObject)

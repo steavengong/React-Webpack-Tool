@@ -23,6 +23,13 @@ Util.checkResponseData = function(data,key){
   return '';
 }
 
+/*字符串替换*/
+Util.replace = function(original,reg,replace){
+  original = original || "";
+  return original.replace(reg,replace)
+}
+
+
 /*解析时间*/
 Util.parseTime = function(time){
   if(time){

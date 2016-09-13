@@ -3,6 +3,8 @@
  */
 const React = require('react');
 require('./index.css');
+const Util = require('../../../common/util/index');
+const Config = require('../../../common/config/index');
 const LazyLoad = require('react-lazy-load');
 const TopicBodyBox = React.createClass({
   initCategories:function(){
@@ -11,6 +13,22 @@ const TopicBodyBox = React.createClass({
       categories.push(<span key={index}>#{category.categoryText}</span>)
     })
     return categories;
+  },
+  replaceTopicContent:function(){
+    let topicContentResult = '';
+    if(this.props.topicBodyData.contents){
+      let topicContent = Util.replace(this.props.topicBodyData.contents,Config.regs.json,"");
+      console.log('topicContent',topicContent);
+      const matches = topicContent.match(Config.regs.special)||[];
+      let topicContentCache = '';
+      matches.forEach(function(match){
+        topicContentCache = topicContent.substring(0,topicContent.indexOf(match));
+        topicContent = topicContent.substring(topicContent.indexOf(match)+match.length);
+        topicContentResult = topicContentResult + topicContentCache + '<span>'+ match+'</span>';
+      })
+
+    }
+    return topicContentResult;
   },
   initTopicMain:function(){
     const contents = [];
@@ -55,7 +73,10 @@ const TopicBodyBox = React.createClass({
         <div className="topic_category">
           {this.initCategories()}<span>{this.props.topicBodyData.createDate.split(' ')[0]}</span>
         </div>
-        <div className={this.props.topicBodyData.contents?"topic_content":"topic_content hidden"}>{this.props.topicBodyData.contents}</div>
+        <div className={this.props.topicBodyData.contents?"topic_content":"topic_content hidden"}>
+          {this.replaceTopicContent()}
+          {/* {Util.replace(Util.replace(this.props.topicBodyData.contents,Config.regs.json,""),Config.regs.special,<span></span>)}*/}
+        </div>
         {this.initTopicMain()}
       </div>
     )
