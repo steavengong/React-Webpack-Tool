@@ -7,7 +7,7 @@ const Util = require('../../../common/util/index');
 require('./index.css');
 const WXHead = React.createClass({
   downloadApp : function(){
-    window.location.href = 'http://www.baidu.com';
+    window.location.href = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.cmbb.smartkids';
   },
   render:function(){
     return (
