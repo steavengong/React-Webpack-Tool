@@ -18,17 +18,16 @@ const TopicBodyBox = React.createClass({
     let topicContentResult = '';
     if(this.props.topicBodyData.contents){
       let topicContent = Util.replace(this.props.topicBodyData.contents,Config.regs.json,"");
-      console.log('topicContent',topicContent);
       const matches = topicContent.match(Config.regs.special)||[];
       let topicContentCache = '';
       matches.forEach(function(match){
         topicContentCache = topicContent.substring(0,topicContent.indexOf(match));
         topicContent = topicContent.substring(topicContent.indexOf(match)+match.length);
-        topicContentResult = topicContentResult + topicContentCache + '<span>'+ match+'</span>';
+        topicContentResult = topicContentResult + topicContentCache + '<span class="span_special">'+ match+'</span>';
       })
 
     }
-    return topicContentResult;
+    return <span dangerouslySetInnerHTML = {{__html:topicContentResult}}></span>;
   },
   initTopicMain:function(){
     const contents = [];
@@ -75,7 +74,6 @@ const TopicBodyBox = React.createClass({
         </div>
         <div className={this.props.topicBodyData.contents?"topic_content":"topic_content hidden"}>
           {this.replaceTopicContent()}
-          {/* {Util.replace(Util.replace(this.props.topicBodyData.contents,Config.regs.json,""),Config.regs.special,<span></span>)}*/}
         </div>
         {this.initTopicMain()}
       </div>
