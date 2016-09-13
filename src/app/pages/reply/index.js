@@ -8,7 +8,6 @@ const Divide = require('../divide/index');
 const ReplyBox = React.createClass({
   initRelyData:function(){
     const replys = [];
-
     this.props.replyList.forEach(function(reply,index){
       const item = (
         <div className="reply_item" key={index}>
@@ -27,7 +26,7 @@ const ReplyBox = React.createClass({
               {reply.createDate.substring(reply.createDate.indexOf('-')+1,reply.createDate.lastIndexOf(':'))}
             </div>
             <div className="reply_item_content">
-              {reply.contents}
+              {this.replaceContents(reply.contents)}
             </div>
           </div>
         </div>
@@ -37,6 +36,9 @@ const ReplyBox = React.createClass({
     }.bind(this))
 
     return replys;
+  },
+  replaceContents:function(contents){
+    return this.props.replaceContents(contents)
   },
   render:function(){
     return (

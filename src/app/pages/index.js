@@ -69,6 +69,7 @@ const IndexPage = React.createClass({
       success:function(result){
         const response = result.response;
         if(response){
+          console.log(response.data);
           const objectData = response.data.objectData;
           const businessData = response.data.businessData;
           const state = {
@@ -109,19 +110,36 @@ const IndexPage = React.createClass({
   componentDidMount:function(){
     this.initTopicData();
   },
+  replaceContents:function(contents){
+    let topicContentResult = '';
+    if(contents){
+      let topicContent = Util.replace(contents,Config.regs.json,"");
+      const matches = topicContent.match(Config.regs.special)||[];
+      let topicContentCache = '';
+      matches.forEach(function(match){
+        topicContentCache = topicContent.substring(0,topicContent.indexOf(match));
+        topicContent = topicContent.substring(topicContent.indexOf(match)+match.length);
+        topicContentResult = topicContentResult + topicContentCache + '<span class="span_special">'+ match+'</span>';
+      })
+      topicContentResult = topicContentResult + topicContent;
+    }
+    return <span dangerouslySetInnerHTML = {{__html:topicContentResult}}></span>;
+  },
   render:function(){
     return (
       <div className="topic_page">
         <WXHead/>
         <UserHeadBox userInfo={this.state.userInfo}/>
         <Divide styleJSON={this.state.styleJSON}/>
-        <TopicBodyBox topicBodyData={this.state.topicBodyData}/>
+        <TopicBodyBox topicBodyData={this.state.topicBodyData}
+                      replaceContents = {this.replaceContents}/>
         <SpotBox styleJSON={this.state.styleJSON}
                  spotList={this.state.spotList}/>
         <ServerRecommendBox styleJSON={this.state.styleJSON}
                             serviceList={this.state.serviceList}/>
         <ReplyBox styleJSON={this.state.styleJSON}
-                  replyList={this.state.replyList}/>
+                  replyList={this.state.replyList}
+                  replaceContents = {this.replaceContents}/>
         <WXFoot/>
       </div>
     )
