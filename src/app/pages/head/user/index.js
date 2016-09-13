@@ -12,7 +12,7 @@ const UserHeadBox = React.createClass({
           <img src={this.props.userInfo.userSmallImg?this.props.userInfo.userSmallImg+'@45w':defaultHead} className="img_inherit"/>
         </div>
         <div className="user_info_box">
-          <div className="user_name">{this.props.userInfo.userNick||' '}</div>
+          <div className="user_name">{this.props.userInfo.userNick}</div>
           <div className="user_presentation">{this.props.userInfo.userPresentation||'这人很懒，什么都没留下...'}</div>
         </div>
       </div>
