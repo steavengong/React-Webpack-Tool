@@ -21,12 +21,6 @@ Config.cmds = {
   wxJSSign:'christ/weixin/setSign',
 }
 
-
-Config.urlParams = {
-    detailId:'detailId'
-}
-
-
 Config.shareObject = {
     title:"萌宝派",
     desc:"萌宝派",
