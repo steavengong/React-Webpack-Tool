@@ -53,6 +53,7 @@ Config.getAppId = function(){
 Config.regs = {
     image: /image\/\w+/,
     phone: /^(13\d{9})|(147\d{8})|(15[02356789]\d{8})|(17[08]\d{8})|(18[012356789]\d{8})$/,
+    json: /{("\w+":"?\w+"?,?)+}/
 }
 
 module.exports = Config;
