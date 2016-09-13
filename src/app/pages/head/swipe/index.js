@@ -96,7 +96,6 @@ const SwipeHead = React.createClass({
         <div className={this.state.cacheTime>0?'status_box':'status_box hidden'}>
           距离{this.props.discount.discountTypeText}结束还有{this.state.timeText}
         </div>
-        {/**/}
       </div>
     )
   }
