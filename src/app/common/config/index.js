@@ -3,13 +3,13 @@
  */
 const Config = require('../../../common/config/index');
 
-Config.debug = true;
+Config.debug = false;
 let shareImage = require('../../assets/logo.png');
 
-Config.requestAction = 'http://erpuat.mengbp.com:8090/wine-rest/cgi';
+Config.requestAction = 'http://mengbaopai.smart-kids.com:84/smart-rest/cgi';
 Config.requestActionDebug = 'http://erpuat.mengbp.com:8090/wine-rest/cgi';
 
-Config.requestWXAction = 'http://erpuat.mengbp.com:8090/wine-weixin-rest/cgi';
+Config.requestWXAction = 'http://mengbaopai.smart-kids.com:84/wine-weixin-rest/cgi';
 Config.requestWXActionDebug = 'http://erpuat.mengbp.com:8090/wine-weixin-rest/cgi';
 
 Config.appId = 'wx5bb398c959489ae4';
