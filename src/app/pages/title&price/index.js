@@ -30,7 +30,7 @@ const TitlePriceBox = React.createClass({
            </span>
           <span className={this.props.price.originalPrice?"original_price":"original_price hidden"}>{this.props.price.originalPrice}</span>
           <span className="peoples_buy_number">
-            {this.props.price.buyPeoplesNumber}人购买
+            {this.props.price.buyPeoplesNumber||0}人购买
            </span>
         </div>
       </div>
