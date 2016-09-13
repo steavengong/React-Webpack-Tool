@@ -14,15 +14,6 @@ const TabContentBox = React.createClass({
       judgeDatas:[]
     }
   },
-  initTabContentItem:function(data,tabData,serveId){
-    const tabContentItems = [];
-    if(data){
-      tabData.forEach(function(tab,index){
-        tabContentItems.push(<TabContentItem key={index} tabData={tab} tabType={index} data={data} serveId={serveId}></TabContentItem>)
-      })
-    }
-    return tabContentItems;
-  },
   initTabContent:function(){
     const tabContents = [];
     this.props.tabBarData.forEach(function(tabBar,index){

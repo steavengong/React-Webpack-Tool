@@ -4,6 +4,7 @@
   padding: 10px;
   position: relative;
   overflow: visible;
+  min-height: 200px;
 }
 
 .tab_content_item{
