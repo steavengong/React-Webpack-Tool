@@ -4,7 +4,6 @@
 const Config = require('../../../common/config/index');
 
 Config.debug = false;
-
 let shareImage = require('../../assets/share.png');
 
 Config.requestWXAction = 'http://weixin.mengbp.com/wine-weixin-rest/cgi';
